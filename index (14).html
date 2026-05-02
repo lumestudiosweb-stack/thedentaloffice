@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dental Office — Pumpwell, Mangaluru | Dr. Prathap M S Nair</title>
+<meta name="description" content="The Dental Office, Pumpwell, Mangaluru — Dr. Prathap M S Nair, BDS. Cosmetic, restorative & implant dentistry with 27 years of experience. Located at Creek Galaxy, opp. Indiana Hospital Road.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ─── RESET & ROOT ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#0B1120;
+  --primary-mid:#141D2E;
+  --primary-light:#1E293B;
+  --accent:#0066FF;
+  --accent-glow:rgba(0,102,255,0.18);
+  --accent2:#38BDF8;
+  --text-white:#FFFFFF;
+  --text-soft:rgba(255,255,255,0.72);
+  --text-muted:rgba(255,255,255,0.42);
+  --border:rgba(255,255,255,0.08);
+  --border-light:rgba(255,255,255,0.14);
+  --surface:rgba(255,255,255,0.04);
+  --surface2:rgba(255,255,255,0.07);
+  --gold:#D4A847;
+  --gold-light:rgba(212,168,71,0.15);
+  --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--primary);color:var(--text-white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.active{opacity:1;transform:none}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;transition:var(--transition);background:transparent}
+nav.scrolled{background:rgba(11,17,32,0.96);padding:14px 5%;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-logo-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--text-white);flex-shrink:0;box-shadow:0 4px 14px rgba(0,102,255,0.4)}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text-white);line-height:1.1}
+.nav-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-soft);padding:8px 13px;border-radius:6px;transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--text-white);background:var(--surface2)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:13px;font-weight:600;color:var(--text-soft);display:flex;align-items:center;gap:7px;transition:color 0.2s}
+.nav-phone i{color:var(--accent);font-size:14px}
+.nav-phone:hover{color:var(--text-white)}
+.nav-cta{background:var(--accent);color:var(--text-white);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:6px;transition:var(--transition);white-space:nowrap}
+.nav-cta:hover{background:#0052CC;box-shadow:0 4px 20px rgba(0,102,255,0.5)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--text-white);border-radius:2px;transition:var(--transition)}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--primary)}
+.hero-bg{position:absolute;inset:0;background:url('WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg') center/cover no-repeat;opacity:0.22}
+.hero-mesh{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 55% at 10% 15%,rgba(0,102,255,0.38) 0%,transparent 55%),
+  radial-gradient(ellipse 60% 50% at 88% 20%,rgba(56,189,248,0.18) 0%,transparent 55%),
+  radial-gradient(ellipse 55% 60% at 50% 100%,rgba(0,102,255,0.22) 0%,transparent 55%);
+  animation:meshMove 16s ease-in-out infinite alternate}
+@keyframes meshMove{0%{opacity:1}100%{opacity:0.7;background:
+  radial-gradient(ellipse 70% 55% at 20% 25%,rgba(0,102,255,0.35) 0%,transparent 55%),
+  radial-gradient(ellipse 60% 50% at 80% 30%,rgba(56,189,248,0.2) 0%,transparent 55%),
+  radial-gradient(ellipse 55% 60% at 60% 95%,rgba(0,102,255,0.25) 0%,transparent 55%)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;pointer-events:none}
+.blob1{width:500px;height:500px;background:var(--accent);top:-150px;right:-150px;animation:floatA 15s ease-in-out infinite}
+.blob2{width:400px;height:400px;background:#0052CC;bottom:-160px;left:-120px;animation:floatB 20s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,70px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,-50px)}}
+.hero-content{position:relative;z-index:3;padding:130px 5% 90px;max-width:820px}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(0,102,255,0.12);border:1px solid rgba(0,102,255,0.35);border-radius:100px;padding:7px 18px;margin-bottom:30px;backdrop-filter:blur(10px)}
+.hero-pill .dot{width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-pill span{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.85)}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,7vw,88px);line-height:1.04;color:var(--text-white);margin-bottom:24px;font-weight:600;letter-spacing:-0.01em}
+.hero h1 em{font-style:italic;font-weight:300;background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:clamp(15px,1.6vw,18px);color:var(--text-soft);max-width:520px;margin-bottom:40px;font-weight:300;line-height:1.7}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-accent{background:var(--accent);color:var(--text-white);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+.btn-accent:hover{background:#0052CC;box-shadow:0 6px 24px rgba(0,102,255,0.5);transform:translateY(-1px)}
+.btn-ghost{color:var(--text-soft);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:13px 26px;border-radius:6px;border:1px solid var(--border-light);transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{color:var(--text-white);border-color:rgba(255,255,255,0.35);background:var(--surface2)}
+.hero-scroll{position:absolute;bottom:32px;left:5%;display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)}
+.hero-scroll::after{content:'';width:40px;height:1px;background:var(--border-light)}
+
+/* ─── STATS BAR ─── */
+.stats{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;padding:0}
+.stat{flex:1;padding:30px 20px;text-align:center;border-right:1px solid var(--border);position:relative}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--accent);line-height:1}
+.stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:6px}
+
+/* ─── SECTIONS ─── */
+.section-tag{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-tag::before{content:'';width:28px;height:1px;background:var(--accent)}
+.section-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.8vw,46px);font-weight:600;color:var(--text-white);line-height:1.15;margin-bottom:16px}
+.section-sub{font-size:15px;color:var(--text-soft);font-weight:300;line-height:1.7;max-width:580px}
+
+/* ─── ABOUT ─── */
+.about{padding:100px 5%;background:var(--primary-mid)}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-media{position:relative}
+.about-img{width:100%;height:500px;object-fit:cover;border-radius:2px}
+.about-card{position:absolute;bottom:-28px;right:-28px;background:var(--primary-light);border:1px solid var(--border-light);padding:22px 26px;backdrop-filter:blur(20px)}
+.about-card-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--accent);line-height:1}
+.about-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:4px}
+.about-text p{color:var(--text-soft);font-size:15px;line-height:1.8;margin-bottom:20px;font-weight:300}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:36px}
+.about-feat{background:var(--primary-mid);padding:20px;display:flex;align-items:flex-start;gap:13px}
+.about-feat-icon{width:34px;height:34px;border-radius:8px;background:var(--accent-glow);border:1px solid rgba(0,102,255,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.about-feat h5{font-size:13px;font-weight:700;color:var(--text-white);margin-bottom:4px}
+.about-feat p{font-size:12px;color:var(--text-muted);margin:0;line-height:1.5}
+
+/* ─── TREATMENTS ─── */
+.treatments{padding:100px 5%;background:var(--primary)}
+.treatments-top{max-width:1200px;margin:0 auto 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.treatments-carousel-wrap{max-width:1200px;margin:0 auto;overflow:hidden}
+.treat-track{display:flex;gap:20px;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+.treat-card{flex:0 0 calc((100% - 60px)/4);background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;transition:var(--transition);position:relative;group:true}
+.treat-card:hover{border-color:rgba(0,102,255,0.4);box-shadow:0 8px 32px rgba(0,102,255,0.15);transform:translateY(-3px)}
+.treat-img-wrap{position:relative;overflow:hidden}
+.treat-img{width:100%;height:200px;object-fit:cover;transition:transform 0.45s ease;filter:brightness(0.85)}
+.treat-card:hover .treat-img{transform:scale(1.06);filter:brightness(0.7)}
+.treat-star{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--primary);font-size:10px;font-weight:700;padding:4px 9px;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:4px}
+.treat-arrow{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.treat-card:hover .treat-arrow{opacity:1}
+.treat-arrow-btn{width:44px;height:44px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:16px}
+.treat-body{padding:20px}
+.treat-body h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text-white);margin-bottom:8px}
+.treat-body p{font-size:12px;color:var(--text-soft);line-height:1.6}
+.carousel-controls{display:flex;align-items:center;gap:10px}
+.ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition)}
+.ctrl-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--text-white)}
+.ctrl-dots{display:flex;gap:7px}
+.ctrl-dot{width:8px;height:8px;border-radius:50%;background:var(--border-light);cursor:pointer;transition:background 0.2s}
+.ctrl-dot.on{background:var(--accent)}
+
+/* ─── SERVICES ─── */
+.services{padding:100px 5%;background:var(--primary-mid)}
+.services-header{max-width:1200px;margin:0 auto 48px;text-align:center}
+.services-header .section-tag{justify-content:center}
+.services-header .section-tag::before{display:none}
+.services-grid-wrap{max-width:1200px;margin:0 auto;overflow:hidden}
+.services-track{display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
+.svc-card{flex:0 0 calc(100%/5);padding:1px}
+.svc-inner{background:var(--primary-light);border:1px solid var(--border);padding:32px 20px;height:100%;text-align:center;transition:var(--transition);cursor:default}
+.svc-inner:hover{border-color:rgba(0,102,255,0.35);background:rgba(0,102,255,0.04)}
+.svc-icon{width:66px;height:66px;border-radius:12px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--surface);border:1px solid var(--border)}
+.svc-inner:nth-child(odd) .svc-icon{background:var(--accent-glow);border-color:rgba(0,102,255,0.25)}
+.svc-inner h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text-white);margin-bottom:10px}
+.svc-inner p{font-size:12px;color:var(--text-muted);line-height:1.6}
+.svc-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:36px}
+
+/* ─── DOCTOR ─── */
+.doctor{padding:100px 5%;background:var(--primary)}
+.doctor-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:start}
+.doctor-img-wrap{position:relative;flex-shrink:0}
+.doctor-img{width:100%;height:520px;object-fit:cover;object-position:top;border-radius:2px}
+.doctor-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,102,255,0.95) 0%,rgba(0,102,255,0.6) 100%);padding:22px 22px 24px;backdrop-filter:blur(10px)}
+.doctor-badge strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:block;color:var(--text-white)}
+.doctor-badge span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.75)}
+.doctor-text .section-tag{margin-top:4px}
+.doctor-meta{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:22px}
+.doctor-text p{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:18px}
+.quals{display:flex;flex-direction:column;gap:10px;margin:24px 0}
+.qual{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-soft)}
+.qual i{color:var(--accent);font-size:13px;flex-shrink:0}
+.doctor-quote{margin-top:8px;padding:20px 22px;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 4px 4px 0}
+.doctor-quote p{font-style:italic;font-size:15px;color:var(--text-soft);line-height:1.7;margin:0}
+.doctor-quote cite{font-size:12px;color:var(--text-muted);font-style:normal;display:block;margin-top:10px}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials{padding:100px 5%;background:var(--primary-mid)}
+.testi-header{max-width:1100px;margin:0 auto 50px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.testi-wrap{max-width:1100px;margin:0 auto;overflow:hidden}
+.testi-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
+.testi-slide{flex:0 0 50%;padding:0 10px}
+.testi-card{background:var(--primary-light);border:1px solid var(--border);padding:36px;height:100%;transition:var(--transition)}
+.testi-card:hover{border-color:rgba(0,102,255,0.35)}
+.testi-q{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:0.6;color:var(--accent);opacity:0.6;margin-bottom:18px;display:block;font-weight:300}
+.testi-author{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text-white);margin-bottom:16px}
+.testi-text{font-size:14px;color:var(--text-soft);line-height:1.8;margin-bottom:14px;font-weight:300}
+.testi-source{font-size:12px;color:var(--text-muted);font-style:italic;margin-bottom:14px}
+.testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+.testi-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:40px}
+
+/* ─── FAQ ─── */
+.faq{padding:100px 5%;background:var(--primary)}
+.faq-inner{max-width:880px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:48px}
+.faq-header .section-tag{justify-content:center}
+.faq-header .section-tag::before{display:none}
+.faq-list{display:flex;flex-direction:column;gap:14px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:var(--transition)}
+.faq-item:hover{border-color:rgba(0,102,255,0.3)}
+.faq-item.open{border-color:rgba(0,102,255,0.5);background:rgba(0,102,255,0.04)}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:15px;font-weight:600;color:var(--text-white);font-family:'Inter',sans-serif}
+.faq-q i{color:var(--accent);font-size:14px;transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 24px}
+.faq-item.open .faq-a{max-height:400px;padding:0 24px 22px}
+.faq-a p{font-size:14px;color:var(--text-soft);line-height:1.7;font-weight:300}
+
+/* ─── CONTACT ─── */
+.contact{padding:100px 5%;background:var(--primary)}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact-info .section-sub{margin-bottom:32px}
+.c-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.c-icon{width:38px;height:38px;border-radius:8px;background:var(--accent-glow);border:1px solid rgba(0,102,255,0.25);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.c-detail strong{display:block;font-size:13px;color:var(--text-white);font-weight:600;margin-bottom:3px}
+.c-detail span{font-size:13px;color:var(--text-soft)}
+.hours-grid{margin-top:32px;border:1px solid var(--border);overflow:hidden}
+.hours-head{background:var(--accent);padding:12px 20px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-white)}
+.hours-row{display:flex;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--border);font-size:13px}
+.hours-row:last-child{border-bottom:none}
+.hours-row span:first-child{color:var(--text-soft)}
+.hours-row span:last-child{color:var(--text-white);font-weight:600}
+.booking-box{background:var(--surface);border:1px solid var(--border);padding:38px}
+.booking-box h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--text-white);margin-bottom:26px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.fg label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
+.fg input,.fg select,.fg textarea{background:var(--surface2);border:1px solid var(--border);color:var(--text-white);padding:12px 14px;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border 0.2s;border-radius:4px;-webkit-appearance:none}
+.fg select option{background:var(--primary-mid)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--text-muted)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(0,102,255,0.6);background:rgba(0,102,255,0.06)}
+.fg textarea{resize:vertical;min-height:88px}
+.btn-wa{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:var(--transition);border-radius:4px;margin-top:6px}
+.btn-wa:hover{opacity:0.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,0.3)}
+.btn-wa i{font-size:17px}
+
+/* ─── FOOTER ─── */
+footer{background:var(--primary-mid);border-top:1px solid var(--border)}
+.footer-main{max-width:1200px;margin:0 auto;padding:60px 5% 40px;display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;gap:50px}
+.f-brand{}
+.f-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.f-logo-mark{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff}
+.f-logo-text{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text-white);line-height:1.2}
+.f-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:600}
+.f-brand p{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:22px}
+.f-sub{display:flex}
+.f-sub input{flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text-white);padding:10px 14px;font-size:12px;font-family:'Inter',sans-serif;outline:none;border-radius:4px 0 0 4px}
+.f-sub input::placeholder{color:var(--text-muted)}
+.f-sub input:focus{border-color:rgba(0,102,255,0.5)}
+.f-sub button{background:var(--accent);color:#fff;border:none;padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:0 4px 4px 0;transition:background 0.2s;white-space:nowrap}
+.f-sub button:hover{background:#0052CC}
+.f-col h5{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-white);margin-bottom:18px}
+.f-links{display:flex;flex-direction:column;gap:9px}
+.f-links a{font-size:13px;color:var(--text-muted);transition:color 0.2s}
+.f-links a:hover{color:var(--text-white)}
+.f-hours{display:flex;flex-direction:column;gap:9px}
+.f-hour{display:flex;justify-content:space-between;font-size:12px;padding-bottom:9px;border-bottom:1px solid var(--border)}
+.f-hour:last-child{border:none}
+.f-hour span:first-child{color:var(--text-muted)}
+.f-hour span:last-child{color:var(--text-soft);font-weight:500}
+.f-ig{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.f-ig-item{aspect-ratio:1;overflow:hidden}
+.f-ig-item img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7);transition:all 0.3s}
+.f-ig-item:hover img{filter:brightness(1);transform:scale(1.08)}
+.footer-bottom{border-top:1px solid var(--border);padding:22px 5%}
+.footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom-inner p{font-size:12px;color:var(--text-muted)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:12px;color:var(--text-muted);transition:color 0.2s}
+.footer-bottom-links a:hover{color:var(--text-white)}
+.f-socials{display:flex;gap:8px;margin-top:16px}
+.f-soc{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;transition:var(--transition)}
+.f-soc:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ─── MOBILE BAR ─── */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--primary-light);border-top:1px solid var(--border)}
+.mob-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:11px 8px;color:var(--text-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;transition:var(--transition)}
+.mob-bar a:first-child{border-right:1px solid var(--border)}
+.mob-bar a i{font-size:18px;color:var(--accent)}
+.mob-bar a:hover{background:var(--surface2);color:var(--text-white)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .footer-main{grid-template-columns:1fr 1fr;gap:36px}
+  .f-ig{display:none}
+}
+@media(max-width:900px){
+  .about-inner,.doctor-inner,.contact-inner{grid-template-columns:1fr;gap:44px}
+  .about-img{height:360px}
+  .about-card{right:16px;bottom:-18px}
+  .doctor-img{height:380px}
+  .treat-card{flex:0 0 calc((100% - 20px)/2)}
+  .svc-card{flex:0 0 calc(100%/3)}
+  .testi-slide{flex:0 0 100%;padding:0}
+}
+@media(max-width:768px){
+  nav{padding:16px 5%}
+  .nav-links,.nav-right{display:none}
+  .menu-toggle{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(11,17,32,0.98);backdrop-filter:blur(20px);padding:16px 0 24px;border-bottom:1px solid var(--border);gap:0;z-index:999}
+  .nav-links.open a{padding:13px 24px;border-bottom:1px solid var(--border)}
+  .stats-inner{flex-wrap:wrap}
+  .stat{flex:0 0 50%;border-bottom:1px solid var(--border)}
+  .stat:nth-child(2){border-right:none}
+  .treat-card{flex:0 0 calc((100% - 16px)/2)}
+  .svc-card{flex:0 0 50%}
+  .testi-track,.treat-track,.services-track{gap:0}
+  .treatments-top{flex-direction:column;align-items:flex-start;gap:20px}
+  .testi-header{flex-direction:column;align-items:flex-start}
+  .form-row{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr;gap:32px}
+  .mob-bar{display:flex}
+  body{padding-bottom:64px}
+}
+@media(max-width:480px){
+  .treat-card{flex:0 0 100%}
+  .svc-card{flex:0 0 100%}
+  .stat{flex:0 0 100%;border-right:none}
+  .hero h1{font-size:42px}
+  .hero-actions{flex-direction:column;gap:10px}
+  .btn-accent,.btn-ghost{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark"><i class="fas fa-tooth"></i></div>
+    <div class="nav-logo-text">The Dental Office<small>Pumpwell, Mangaluru</small></div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#services">Services</a>
+    <a href="#doctor">Our Doctor</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:917892029550" class="nav-phone"><i class="fas fa-phone-volume"></i>+91 78920 29550</a>
+    <a href="#contact" class="nav-cta">Book Now</a>
+  </div>
+  <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><span class="dot"></span><span>Now Accepting New Patients — Emergency Same Day</span></div>
+    <div class="hero-eyebrow">🦷 Dr. Prathap M S Nair, BDS &nbsp;·&nbsp; Pumpwell, Mangaluru</div>
+    <h1>Expert Dental Care,<br><em>Built Around You</em></h1>
+    <p>Family-friendly, established dental practice at Creek Galaxy, Pumpwell, Mangaluru. Cosmetic, restorative and implant dentistry — delivered with 27 years of experience and a gentle, judgement-free approach.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-accent"><i class="fas fa-calendar-check"></i>Book an Appointment</a>
+      <a href="#treatments" class="btn-ghost"><i class="fas fa-tooth"></i>View Treatments</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num" data-target="4.9">0</div><div class="stat-label">★ Patient Rating</div></div>
+    <div class="stat"><div class="stat-num" data-target="27">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat"><div class="stat-num" data-target="5000">0</div><div class="stat-label">Patients Treated</div></div>
+    <div class="stat"><div class="stat-num" data-target="6">0</div><div class="stat-label">Days a Week</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about reveal" id="about">
+  <div class="about-inner">
+    <div class="about-media reveal">
+      <img class="about-img" src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="The Dental Office Mangaluru Reception">
+      <div class="about-card">
+        <div class="about-card-num" data-target="5000">0</div>
+        <div class="about-card-label">Happy Patients</div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-tag">About Our Practice</div>
+      <h2 class="section-h2">A Practice You Can Trust, in the Heart of Mangaluru</h2>
+      <p>The Dental Office is a trusted, established, and affordable dental practice in Pumpwell, Mangaluru — serving patients of all ages from across the city and beyond. Led by Dr. Prathap M S Nair (BDS, 27 years experience), our clinic is built around a comfortable, welcoming environment, particularly for those who experience dental anxiety.</p>
+      <p>We offer same-day emergency appointments where possible and are committed to delivering high-quality, transparent dental care using the latest techniques and modern technology — without the jargon or unnecessary treatment.</p>
+      <div class="about-features">
+        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-heart"></i></div><div><h5>Compassionate Care</h5><p>Gentle approach for anxious patients</p></div></div>
+        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-microscope"></i></div><div><h5>Modern Technology</h5><p>Latest equipment &amp; techniques</p></div></div>
+        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-users"></i></div><div><h5>All Ages Welcome</h5><p>Paediatric to senior dental care</p></div></div>
+        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-bolt"></i></div><div><h5>Emergency Slots</h5><p>Same-day bookings where possible</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSMETIC TREATMENTS -->
+<section class="treatments reveal" id="treatments">
+  <div class="treatments-top">
+    <div>
+      <div class="section-tag">Cosmetic Dental Services</div>
+      <h2 class="section-h2">Treatments We Offer</h2>
+    </div>
+    <div class="carousel-controls" id="treatControls">
+      <button class="ctrl-btn" id="treatPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="ctrl-dots" id="treatDots"></div>
+      <button class="ctrl-btn" id="treatNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <div class="treatments-carousel-wrap">
+    <div class="treat-track" id="treatTrack">
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=600" alt="Teeth Whitening">
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Teeth Whitening</h4><p>Dentist-approved professional whitening systems that are both safe and highly effective.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600" alt="Veneers">
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Veneers</h4><p>Custom-made thin shells that fit over your teeth to improve shape, colour, and appearance.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600" alt="Invisalign">
+          <div class="treat-star"><i class="fas fa-star"></i> Popular</div>
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Invisalign</h4><p>Your local Invisalign provider in Mangaluru — clear aligners for a straighter smile without metal braces.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=600" alt="Composite Bonding">
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Composite Bonding</h4><p>A tooth-coloured agent for fixing chips, gaps &amp; discolouration — often completed in a single visit.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=600" alt="White Fillings">
+          <div class="treat-star"><i class="fas fa-star"></i> Featured</div>
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>White Fillings</h4><p>Mercury-free alternative to silver fillings that blends naturally with your teeth for a seamless result.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=600" alt="Smile Makeover">
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Smile Makeover</h4><p>Comprehensive cosmetic plan combining multiple treatments to completely transform your smile.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600" alt="Dental Implants">
+          <div class="treat-star"><i class="fas fa-star"></i> Popular</div>
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Dental Implants</h4><p>Permanent, natural-looking tooth replacements that function and feel just like your real teeth.</p></div>
+      </div>
+      <div class="treat-card">
+        <div class="treat-img-wrap">
+          <img class="treat-img" src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=600" alt="Braces">
+          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+        </div>
+        <div class="treat-body"><h4>Braces</h4><p>Traditional and clear braces for effective teeth alignment — tailored to your age and lifestyle.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTORATIVE SERVICES -->
+<section class="services reveal" id="services">
+  <div class="services-header">
+    <div class="section-tag">Restorative Services</div>
+    <h2 class="section-h2">Putting Tooth Preservation First</h2>
+    <p class="section-sub" style="margin:0 auto">From routine fillings to complex restorations — we keep your natural teeth healthy and strong for as long as possible.</p>
+  </div>
+  <div class="services-grid-wrap">
+    <div class="services-track" id="svcTrack">
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🦷</div><h4>Fillings</h4><p>Treats small holes or cavities caused by decay, restoring the tooth's structure and function.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔬</div><h4>Root Canal</h4><p>Endodontic treatment that aims to treat infection at the centre of a tooth, relieving pain.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">👑</div><h4>Crowns</h4><p>Tooth-shaped coverings placed over damaged teeth to restore their shape, size, and strength.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔗</div><h4>Bridges</h4><p>Replaces missing teeth by bridging the gap between two remaining teeth for a complete smile.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😁</div><h4>Dentures</h4><p>Custom-fit prosthetics that replace missing teeth and restore the appearance of the mouth.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🛡️</div><h4>Gum Treatment</h4><p>Professional periodontal care to treat gum disease and prevent bone loss over time.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">✨</div><h4>Scale &amp; Polish</h4><p>Professional cleaning to remove tartar and plaque build-up, keeping gums healthy.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🩺</div><h4>Check-Up &amp; X-Ray</h4><p>Digital X-rays and thorough examination to detect issues early and plan treatment proactively.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">👶</div><h4>Paediatric Dentistry</h4><p>Gentle, child-friendly dental care to build healthy habits and a positive attitude early.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🚑</div><h4>Emergency Care</h4><p>Same-day appointments for toothaches, broken teeth, and urgent dental problems.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😬</div><h4>Aligners &amp; Invisible Braces</h4><p>Clear, removable aligners and invisible braces for discreet teeth straightening.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">⚙️</div><h4>Dental Implants</h4><p>Implant fixing, surgery and immediate-loading options to restore missing teeth.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">💎</div><h4>Zirconia &amp; Porcelain Crowns</h4><p>Premium ceramic, zirconia and porcelain crowns for natural-looking restorations.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😄</div><h4>Smile Designing</h4><p>Customised smile makeovers combining veneers, whitening and reshaping.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🦷</div><h4>Wisdom Tooth &amp; Surgical Extraction</h4><p>Safe, gentle removal of impacted and problematic wisdom teeth.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔆</div><h4>Laser Dentistry</h4><p>Cosmetic laser dentistry, laser teeth whitening and gum treatment.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🛡️</div><h4>Mouth Guards</h4><p>Custom-fit night guards and sports mouth guards for protection.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔬</div><h4>RCT Under Microscope</h4><p>Single-sitting and microscope-assisted root canal treatment for precision.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">📱</div><h4>Online Booking</h4><p>Book your dentist appointment online — quick, easy and contact-free.</p></div></div>
+      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">♿</div><h4>Wheelchair Accessible</h4><p>Our clinic is fully wheelchair accessible for patients of all mobility levels.</p></div></div>
+    </div>
+  </div>
+  <div class="svc-controls">
+    <button class="ctrl-btn" id="svcPrev"><i class="fas fa-chevron-left"></i></button>
+    <div class="ctrl-dots" id="svcDots"></div>
+    <button class="ctrl-btn" id="svcNext"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section class="doctor reveal" id="doctor">
+  <div class="doctor-inner" style="grid-template-columns:1fr;max-width:900px">
+    <div class="doctor-text reveal">
+      <div class="section-tag">Meet Your Dentist</div>
+      <h2 class="section-h2">Dr. Prathap M S Nair</h2>
+      <p class="doctor-meta">BDS · Cosmetic/Aesthetic Dentist · Restorative Dentist · Dental Surgeon</p>
+      <p>Dr. Prathap M S Nair is a Cosmetic/Aesthetic Dentist, Restorative Dentist and Dental Surgeon practising at The Dental Office in Pumpwell, Mangaluru. He brings 27 years of overall experience — 25 of those as a specialist — to every patient he treats.</p>
+      <p>He completed his BDS from KVG Medical College, Sullia, in 1999 and his medical registration is verified. With a warm, patient-centred approach and a commitment to evidence-based dentistry, every visit is tailored to your unique needs and comfort level.</p>
+      <div class="quals">
+        <div class="qual"><i class="fas fa-check-circle"></i><span>BDS — KVG Medical College, Sullia (1999)</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span>27 years overall experience (25 years as specialist)</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span>Cosmetic/Aesthetic Dentist · Restorative Dentist · Dental Surgeon</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span>Medical Registration Verified</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span>Special interest: Scaling/Polishing, Ceramic Veneers/Crowns, Pulpectomy, Bone Grafting for Dental Implants, Zirconia Crowns</span></div>
+      </div>
+      <div class="doctor-quote">
+        <p>"Patient well-being and comfort are at the heart of every decision we make. No judgements, no unnecessary treatment — just honest, quality dental care."</p>
+        <cite>— Dr. Prathap M S Nair, The Dental Office, Pumpwell</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal" id="testimonials">
+  <div class="testi-header">
+    <div>
+      <div class="section-tag">Patient Experiences</div>
+      <h2 class="section-h2">What Our Patients Say</h2>
+    </div>
+    <div class="carousel-controls">
+      <button class="ctrl-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="ctrl-dots" id="testiDots"></div>
+      <button class="ctrl-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <div class="testi-wrap">
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-slide"><div class="testi-card">
+        <span class="testi-q">&#8220;</span>
+        <div class="testi-author">Dhruvika Khanna</div>
+        <p class="testi-text">Had a really good experience at The Dental Office, Mangalore! Went for a filling — it was quick, painless, and done really well. The clinic is clean and the staff are super friendly. Definitely recommend!</p>
+        <p class="testi-source">(Google Review)</p>
+        <div class="testi-stars">★★★★★</div>
+      </div></div>
+      <div class="testi-slide"><div class="testi-card">
+        <span class="testi-q">&#8220;</span>
+        <div class="testi-author">Deepika Bhat</div>
+        <p class="testi-text">I went to many dentists but didn't get the right treatment. Even when other doctors told me the tooth couldn't be saved, Dr. Prathap managed to save it. I really recommend him for any kind of root canal, re-root canal, or dental filling. He's the best at what he does and makes you feel comfortable throughout the treatment.</p>
+        <p class="testi-source">(Google Local Guide · 14 reviews)</p>
+        <div class="testi-stars">★★★★★</div>
+      </div></div>
+      <div class="testi-slide"><div class="testi-card">
+        <span class="testi-q">&#8220;</span>
+        <div class="testi-author">Shahanas Salahudeen</div>
+        <p class="testi-text">From the moment I walked in, I was impressed by the excellent infrastructure — clean, modern, and welcoming. Dr. Prathap and Dr. Sruthi were true professionals. They took the time to explain everything and answer all my questions. The clinic uses the latest technology and the entire experience was painless and efficient. Five stars all the way!</p>
+        <p class="testi-source">(Google Local Guide · 59 reviews)</p>
+        <div class="testi-stars">★★★★★</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq reveal" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-h2">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Where does Dr. Prathap M S Nair practice? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Dr. Prathap M S Nair practices at The Dental Office — Pumpwell, located at 2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How can I take Dr. Prathap M S Nair's appointment? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>You can book an appointment directly through this website using the form below, or reach out via phone / WhatsApp at +91 78920 29550. Online booking through Practo is also available for in-clinic visits with the doctor.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why do patients visit Dr. Prathap M S Nair? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Patients frequently visit Dr. Prathap for Scaling / Polishing, Ceramic Veneers / Crowns, Pulpectomy, Bone Grafting for Dental Implants, Zirconia Crowns and a wide range of cosmetic and restorative procedures.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is Dr. Prathap M S Nair's education qualification? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Dr. Prathap M S Nair holds a BDS (Bachelor of Dental Surgery), completed from KVG Medical College, Sullia, in 1999. His medical registration is verified.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does Dr. Prathap M S Nair specialise in? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Dr. Prathap M S Nair specialises as a Cosmetic/Aesthetic Dentist, Restorative Dentist, and Dental Surgeon, with 27 years of overall experience (25 years as a specialist).</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What are the clinic's opening hours? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>The Dental Office is open Monday to Saturday from 3:00 PM to 7:30 PM. The clinic is closed on Sundays.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the clinic wheelchair accessible? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Yes, our clinic is wheelchair accessible. Please let us know in advance if you need any specific assistance and we'll be happy to help.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-h2">Book Your Appointment</h2>
+      <p class="section-sub">Step into a space built around your dental health. Reach out via phone or WhatsApp — we respond within minutes.</p>
+      <div style="margin-top:30px">
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Location</strong><span>2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002</span></div></div>
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-phone"></i></div><div><strong>Phone / WhatsApp</strong><span><a href="tel:917892029550" style="color:rgba(255,255,255,0.72)">+91 78920 29550</a></span></div></div>
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span>info@thedentaloffice.in</span></div></div>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-head"><i class="fas fa-clock" style="margin-right:8px"></i>Opening Hours</div>
+        <div class="hours-row"><span>Monday – Saturday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div class="booking-box">
+      <h3>Request an Appointment</h3>
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="Your first name" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
+      </div>
+      <div class="fg"><label>Phone Number</label><input type="tel" id="phone" placeholder="+91 00000 00000" required></div>
+      <div class="fg">
+        <label>Treatment Required</label>
+        <select id="treatment">
+          <option value="">Select a treatment...</option>
+          <option>Check-Up &amp; X-Ray</option>
+          <option>Teeth Whitening</option>
+          <option>Invisalign / Braces</option>
+          <option>Veneers</option>
+          <option>Composite Bonding</option>
+          <option>Dental Implants</option>
+          <option>White Fillings</option>
+          <option>Root Canal</option>
+          <option>Crown / Bridge</option>
+          <option>Dentures</option>
+          <option>Gum Treatment</option>
+          <option>Emergency Appointment</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message (optional)</label><textarea id="message" placeholder="Any additional details or preferred appointment time..."></textarea></div>
+      <button class="btn-wa" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i>Send via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="f-brand">
+      <div class="f-logo">
+        <div class="f-logo-mark"><i class="fas fa-tooth"></i></div>
+        <div class="f-logo-text">The Dental Office<small>Mangaluru</small></div>
+      </div>
+      <p>Family-friendly, established, and affordable dental practice at Creek Galaxy, Pumpwell, Mangaluru. We offer same-day emergency appointments and are committed to creating a comfortable, judgement-free environment for all patients.</p>
+      <div class="f-socials">
+        <a href="#" class="f-soc"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="f-soc"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/917892029550" class="f-soc"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Useful Links</h5>
+      <div class="f-links">
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#services">Services</a>
+        <a href="#doctor">Our Doctor</a>
+        <a href="#contact">Appointments</a>
+        <a href="#contact">Fees</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Opening Times</h5>
+      <div class="f-hours">
+        <div class="f-hour"><span>Monday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Tuesday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Wednesday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Thursday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Friday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Saturday</span><span>3:00 PM – 7:30 PM</span></div>
+        <div class="f-hour"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Gallery</h5>
+      <div class="f-ig">
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="Treatment Room"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM.jpeg" alt="Treatment Room View 2"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM%20%281%29.jpeg" alt="Treatment Room View 3"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="Dental Chairs"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="Reception"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-26%20at%2011.39.40%20PM%20%283%29.jpeg" alt="Clinic Entrance"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.37%20AM.jpeg" alt="Dental Equipment"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="Treatment Room"></div>
+        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="Dental Chairs"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 The Dental Office, Mangaluru. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Powered by LuMe Studios</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mob-bar">
+  <a href="tel:917892029550"><i class="fas fa-phone"></i>Call Now</a>
+  <a href="https://wa.me/917892029550" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+</div>
+
+<script>
+/* ─── NAV SCROLL ─── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+/* ─── MOBILE MENU ─── */
+const toggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.addEventListener('click', e => { if (!toggle.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open'); });
+
+/* ─── REVEAL ─── */
+const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ─── COUNTER ─── */
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const isDecimal = target % 1 !== 0;
+  const duration = 2000;
+  const start = performance.now();
+  const run = now => {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = target * ease;
+    el.textContent = isDecimal ? val.toFixed(1) : Math.floor(val).toLocaleString();
+    if (p < 1) requestAnimationFrame(run);
+    else el.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+  };
+  requestAnimationFrame(run);
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(animateCounter); statsObs.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stats, .about').forEach(s => statsObs.observe(s));
+
+/* ─── CAROUSEL FACTORY ─── */
+function makeCarousel(opts) {
+  const { track, prevBtn, nextBtn, dotsEl, getVisible, gap } = opts;
+  const items = track.children;
+  let cur = 0;
+
+  function visible() { return getVisible(); }
+  function pages() { return Math.ceil(items.length / visible()); }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < pages(); i++) {
+      const d = document.createElement('div');
+      d.className = 'ctrl-dot' + (i === 0 ? ' on' : '');
+      d.addEventListener('click', () => go(i));
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function go(page) {
+    cur = Math.max(0, Math.min(page, pages() - 1));
+    const itemW = track.parentElement.offsetWidth / visible();
+    track.style.transform = `translateX(-${cur * visible() * itemW}px)`;
+    dotsEl.querySelectorAll('.ctrl-dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+  }
+
+  function init() {
+    const vis = visible();
+    const w = `calc((100% - ${gap * (vis - 1)}px) / ${vis})`;
+    Array.from(items).forEach(el => { el.style.flex = `0 0 ${w}`; el.style.maxWidth = w; });
+    cur = 0;
+    track.style.transform = 'translateX(0)';
+    track.style.gap = gap + 'px';
+    track.style.display = 'flex';
+    buildDots();
+  }
+
+  prevBtn.addEventListener('click', () => go(cur - 1));
+  nextBtn.addEventListener('click', () => go(cur + 1));
+  window.addEventListener('resize', init);
+  init();
+  return { go };
+}
+
+/* Treatments */
+makeCarousel({
+  track: document.getElementById('treatTrack'),
+  prevBtn: document.getElementById('treatPrev'),
+  nextBtn: document.getElementById('treatNext'),
+  dotsEl: document.getElementById('treatDots'),
+  getVisible: () => window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 4,
+  gap: 20
+});
+
+/* Services */
+makeCarousel({
+  track: document.getElementById('svcTrack'),
+  prevBtn: document.getElementById('svcPrev'),
+  nextBtn: document.getElementById('svcNext'),
+  dotsEl: document.getElementById('svcDots'),
+  getVisible: () => window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 5,
+  gap: 0
+});
+
+/* Testimonials */
+const testiCarousel = makeCarousel({
+  track: document.getElementById('testiTrack'),
+  prevBtn: document.getElementById('testiPrev'),
+  nextBtn: document.getElementById('testiNext'),
+  dotsEl: document.getElementById('testiDots'),
+  getVisible: () => window.innerWidth < 768 ? 1 : 2,
+  gap: 20
+});
+let testiPage = 0;
+setInterval(() => {
+  const pages = Math.ceil(3 / (window.innerWidth < 768 ? 1 : 2));
+  testiPage = (testiPage + 1) % pages;
+  testiCarousel.go(testiPage);
+}, 6000);
+
+/* ─── FAQ ─── */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+
+/* ─── WHATSAPP ─── */
+function sendWhatsApp() {
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const treatment = document.getElementById('treatment').value;
+  const message = document.getElementById('message').value.trim();
+  if (!fname || !phone) { alert('Please fill in your name and phone number.'); return; }
+  const text = encodeURIComponent(`Hello The Dental Office!\n\n*New Appointment Request*\n\n*Name:* ${fname} ${lname}\n*Phone:* ${phone}\n*Treatment:* ${treatment || 'Not specified'}\n*Message:* ${message || 'N/A'}`);
+  window.open(`https://wa.me/917892029550?text=${text}`, '_blank');
+}
+</script>
+</body>
+</html>
