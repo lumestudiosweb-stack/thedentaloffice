@@ -575,14 +575,14 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       <span class="testi-q">&#8220;</span>
       <div class="testi-author">Deepika Bhat</div>
       <p class="testi-text">I went to many dentists but didn't get the right treatment. Even when other doctors told me the tooth couldn't be saved, Dr. Prathap managed to save it. I really recommend him for any kind of root canal, re-root canal, or dental filling. He's the best at what he does and makes you feel comfortable throughout the treatment.</p>
-      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide · 14 reviews</p>
+      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide</p>
       <div class="testi-stars">★★★★★</div>
     </div>
     <div class="testi-card">
       <span class="testi-q">&#8220;</span>
       <div class="testi-author">Shahanas Salahudeen</div>
       <p class="testi-text">From the moment I walked in, I was impressed by the excellent infrastructure — clean, modern, and welcoming. Dr. Prathap and Dr. Sruthi were true professionals. They took the time to explain everything and answer all my questions. The clinic uses the latest technology and the entire experience was painless and efficient. Five stars all the way!</p>
-      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide · 59 reviews</p>
+      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide</p>
       <div class="testi-stars">★★★★★</div>
     </div>
   </div>
@@ -652,7 +652,6 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
         <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="Your first name" required></div>
         <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
       </div>
-      <div class="fg"><label>Phone Number</label><input type="tel" id="phone" placeholder="+91 00000 00000" required></div>
       <div class="fg">
         <label>Treatment Required</label>
         <select id="treatment">
@@ -861,11 +860,10 @@ document.querySelectorAll('.faq-item').forEach(item => {
 function sendWhatsApp() {
   const fname = document.getElementById('fname').value.trim();
   const lname = document.getElementById('lname').value.trim();
-  const phone = document.getElementById('phone').value.trim();
   const treatment = document.getElementById('treatment').value;
   const message = document.getElementById('message').value.trim();
-  if (!fname || !phone) { alert('Please fill in your name and phone number.'); return; }
-  const text = encodeURIComponent(`Hello The Dental Office!\n\n*New Appointment Request*\n\n*Name:* ${fname} ${lname}\n*Phone:* ${phone}\n*Treatment:* ${treatment || 'Not specified'}\n*Message:* ${message || 'N/A'}`);
+  if (!fname) { alert('Please enter your name.'); return; }
+  const text = encodeURIComponent(`Hello The Dental Office!\n\n*New Appointment Request*\n\n*Name:* ${fname} ${lname}\n*Treatment:* ${treatment || 'Not specified'}\n*Message:* ${message || 'N/A'}`);
   window.open(`https://wa.me/917892029550?text=${text}`, '_blank');
 }
 </script>
