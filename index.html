@@ -126,18 +126,11 @@ nav.scrolled{background:rgba(11,17,32,0.96);padding:14px 5%;backdrop-filter:blur
 .treatments-top{max-width:1200px;margin:0 auto 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
 .treatments-carousel-wrap{max-width:1200px;margin:0 auto;overflow:hidden}
 .treat-track{display:flex;gap:20px;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
-.treat-card{flex:0 0 calc((100% - 60px)/4);background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;transition:var(--transition);position:relative;group:true}
-.treat-card:hover{border-color:rgba(0,102,255,0.4);box-shadow:0 8px 32px rgba(0,102,255,0.15);transform:translateY(-3px)}
-.treat-img-wrap{position:relative;overflow:hidden}
-.treat-img{width:100%;height:200px;object-fit:cover;transition:transform 0.45s ease;filter:brightness(0.85)}
-.treat-card:hover .treat-img{transform:scale(1.06);filter:brightness(0.7)}
-.treat-star{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--primary);font-size:10px;font-weight:700;padding:4px 9px;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:4px}
-.treat-arrow{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
-.treat-card:hover .treat-arrow{opacity:1}
-.treat-arrow-btn{width:44px;height:44px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:16px}
-.treat-body{padding:20px}
-.treat-body h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text-white);margin-bottom:8px}
-.treat-body p{font-size:12px;color:var(--text-soft);line-height:1.6}
+.treat-card{flex:0 0 calc((100% - 60px)/4);background:var(--surface);border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:var(--transition);position:relative;padding:32px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.treat-card:hover{border-color:rgba(0,102,255,0.4);box-shadow:0 8px 32px rgba(0,102,255,0.15);transform:translateY(-3px);background:rgba(0,102,255,0.04)}
+.treat-icon{width:56px;height:56px;border-radius:12px;background:var(--accent-glow);border:1px solid rgba(0,102,255,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.treat-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text-white);line-height:1.2}
+.treat-card p{font-size:13px;color:var(--text-soft);line-height:1.65;font-weight:300}
 .carousel-controls{display:flex;align-items:center;gap:10px}
 .ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition)}
 .ctrl-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--text-white)}
@@ -341,6 +334,7 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
     <a href="#treatments">Treatments</a>
     <a href="#services">Services</a>
     <a href="#doctor">Our Doctor</a>
+    <a href="#testimonials">Reviews</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
@@ -422,60 +416,44 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
   <div class="treatments-carousel-wrap">
     <div class="treat-track" id="treatTrack">
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=600" alt="Teeth Whitening">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Teeth Whitening</h4><p>Dentist-administered professional whitening systems that are safe and highly effective.</p></div>
+        <div class="treat-icon"><i class="fas fa-tooth"></i></div>
+        <h4>Teeth Whitening</h4>
+        <p>Dentist-administered in-office bleaching and laser whitening — safe, effective, and noticeably brighter results.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="https://images.unsplash.com/photo-1581585504991-b4ce39ed31c0?auto=format&fit=crop&q=80&w=600" alt="Ceramic Veneers and Crowns">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Ceramic Veneers &amp; Crowns</h4><p>Custom-made veneers, porcelain and zirconia crowns to improve shape, colour, and appearance.</p></div>
+        <div class="treat-icon"><i class="fas fa-gem"></i></div>
+        <h4>Ceramic Veneers &amp; Crowns</h4>
+        <p>Custom porcelain veneers, zirconia and ceramic crowns to restore shape, colour and strength.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="https://images.unsplash.com/photo-1606811961746-9f1f4eb47e3e?auto=format&fit=crop&q=80&w=600" alt="Clear Aligners">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Clear Aligners</h4><p>Invisible/clear aligners for a straighter smile — discreet alternative to traditional metal braces.</p></div>
+        <div class="treat-icon"><i class="fas fa-grin"></i></div>
+        <h4>Clear Aligners</h4>
+        <p>Invisible aligners and clear braces for a discreet alternative to traditional metal orthodontics.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="WhatsApp%20Image%202026-04-27%20at%2012.24.37%20AM.jpeg" alt="The Dental Office Treatment Room">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Scaling &amp; Polishing</h4><p>Professional cleaning to remove tartar and plaque build-up, keeping teeth and gums healthy.</p></div>
+        <div class="treat-icon"><i class="fas fa-spray-can"></i></div>
+        <h4>Scaling &amp; Polishing</h4>
+        <p>Professional cleaning to remove tartar and plaque build-up — keeping teeth and gums healthy.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=600" alt="Tooth-Coloured Fillings">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Tooth-Coloured Fillings</h4><p>Mercury-free composite fillings that blend naturally with your teeth for a seamless finish.</p></div>
+        <div class="treat-icon"><i class="fas fa-fill-drip"></i></div>
+        <h4>Tooth-Coloured Fillings</h4>
+        <p>Mercury-free composite fillings that blend naturally with your teeth for a seamless finish.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM.jpeg" alt="Dental Chair at The Dental Office">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Smile Designing</h4><p>Comprehensive cosmetic plan combining veneers, whitening and reshaping to refine your smile.</p></div>
+        <div class="treat-icon"><i class="fas fa-smile-beam"></i></div>
+        <h4>Smile Designing</h4>
+        <p>Comprehensive cosmetic plan combining veneers, whitening and reshaping to refine your smile.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600" alt="Dental Implants">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Dental Implants</h4><p>Implant fixing, surgery and bone grafting — long-lasting tooth replacements that look and feel natural.</p></div>
+        <div class="treat-icon"><i class="fas fa-screwdriver"></i></div>
+        <h4>Dental Implants</h4>
+        <p>Implant fixing, surgery and bone grafting — long-lasting replacements that look and feel natural.</p>
       </div>
       <div class="treat-card">
-        <div class="treat-img-wrap">
-          <img class="treat-img" src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="The Dental Office Mangaluru">
-          <div class="treat-arrow"><div class="treat-arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
-        </div>
-        <div class="treat-body"><h4>Root Canal Treatment</h4><p>Single-sitting RCT and microscope-assisted root canal treatment for precise, comfortable care.</p></div>
+        <div class="treat-icon"><i class="fas fa-microscope"></i></div>
+        <h4>Root Canal Treatment</h4>
+        <p>Single-sitting RCT and microscope-assisted root canal treatment for precise, comfortable care.</p>
       </div>
     </div>
   </div>
@@ -572,6 +550,40 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       <div style="width:48px;height:48px;border-radius:10px;background:var(--accent-glow);border:1px solid rgba(0,102,255,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px"><i class="fas fa-wheelchair"></i></div>
       <div class="testi-author" style="font-size:18px">Wheelchair Accessible</div>
       <p class="testi-text">Located on the 2nd floor of Creek Galaxy with wheelchair access, opp. Indiana Hospital Road, Pumpwell — easy to reach from across Mangaluru.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal" id="testimonials" style="background:var(--primary)">
+  <div class="testi-header" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+    <div>
+      <div class="section-tag" style="justify-content:center">Patient Reviews</div>
+      <h2 class="section-h2">What Our Patients Say</h2>
+      <p class="section-sub" style="margin:0 auto">Verified Google reviews from patients of The Dental Office, Pumpwell.</p>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+    <div class="testi-card">
+      <span class="testi-q">&#8220;</span>
+      <div class="testi-author">Dhruvika Khanna</div>
+      <p class="testi-text">Had a really good experience at The Dental Office, Mangalore! Went for a filling — it was quick, painless, and done really well. The clinic is clean and the staff are super friendly. Definitely recommend!</p>
+      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Review</p>
+      <div class="testi-stars">★★★★★</div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-q">&#8220;</span>
+      <div class="testi-author">Deepika Bhat</div>
+      <p class="testi-text">I went to many dentists but didn't get the right treatment. Even when other doctors told me the tooth couldn't be saved, Dr. Prathap managed to save it. I really recommend him for any kind of root canal, re-root canal, or dental filling. He's the best at what he does and makes you feel comfortable throughout the treatment.</p>
+      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide · 14 reviews</p>
+      <div class="testi-stars">★★★★★</div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-q">&#8220;</span>
+      <div class="testi-author">Shahanas Salahudeen</div>
+      <p class="testi-text">From the moment I walked in, I was impressed by the excellent infrastructure — clean, modern, and welcoming. Dr. Prathap and Dr. Sruthi were true professionals. They took the time to explain everything and answer all my questions. The clinic uses the latest technology and the entire experience was painless and efficient. Five stars all the way!</p>
+      <p class="testi-source"><i class="fab fa-google" style="color:#fff;margin-right:6px"></i>Google Local Guide · 59 reviews</p>
+      <div class="testi-stars">★★★★★</div>
     </div>
   </div>
 </section>
