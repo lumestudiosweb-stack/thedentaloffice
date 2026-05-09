@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lumestudiosweb-stack.github.io/thedentaloffice/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lumestudiosweb-stack.github.io/thedentaloffice/WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg</image:loc>
+      <image:title>The Dental Office — Treatment Room, Pumpwell, Mangaluru</image:title>
+      <image:caption>Modern dental treatment room at The Dental Office, Creek Galaxy, Pumpwell.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lumestudiosweb-stack.github.io/thedentaloffice/WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM%20%281%29.jpeg</image:loc>
+      <image:title>The Dental Office — Patient Chair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lumestudiosweb-stack.github.io/thedentaloffice/WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg</image:loc>
+      <image:title>The Dental Office — Reception</image:title>
+    </image:image>
+  </url>
+</urlset>
