@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Dental Office — Pumpwell, Mangaluru | Dr. Prathap M S Nair</title>
 <meta name="description" content="The Dental Office, Pumpwell, Mangaluru — Dr. Prathap M S Nair, BDS. Cosmetic, restorative & implant dentistry with 27 years of experience. Located at Creek Galaxy, opp. Indiana Hospital Road.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* ─── RESET & ROOT ─── */
@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 5%;display:fle
 nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(15,23,42,0.06)}
 .nav-logo{display:flex;align-items:center;gap:14px}
 .nav-logo-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--text-on-accent);flex-shrink:0;box-shadow:0 4px 14px rgba(249,115,22,0.4)}
-.nav-logo-text{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--text-white);line-height:1.1}
+.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:600;color:var(--text-white);line-height:1.1}
 .nav-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-soft);padding:8px 13px;border-radius:6px;transition:var(--transition)}
@@ -83,7 +83,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .hero-pill span{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(15,23,42,0.85)}
 .hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent)}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,7vw,88px);line-height:1.04;color:var(--text-white);margin-bottom:24px;font-weight:600;letter-spacing:-0.01em}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(46px,7vw,88px);line-height:1.04;color:var(--text-white);margin-bottom:24px;font-weight:600;letter-spacing:-0.01em}
 .hero h1 em{font-style:italic;font-weight:300;background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{font-size:clamp(15px,1.6vw,18px);color:var(--text-soft);max-width:520px;margin-bottom:40px;font-weight:300;line-height:1.7}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -94,18 +94,31 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .hero-scroll{position:absolute;bottom:32px;left:5%;display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)}
 .hero-scroll::after{content:'';width:40px;height:1px;background:var(--border-light)}
 
+/* ─── ANIMATED TOOTH ─── */
+.tooth-anim{position:absolute;bottom:120px;right:6%;width:150px;z-index:4;cursor:pointer;animation:toothFloat 6s ease-in-out infinite;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);filter:drop-shadow(0 18px 32px rgba(10,25,47,0.18))}
+.tooth-anim:hover{transform:scale(1.10) rotate(-5deg)}
+.tooth-svg{width:100%;height:auto;display:block;overflow:visible}
+.tooth-shine{animation:shineSweep 3.5s ease-in-out infinite;mix-blend-mode:overlay}
+.sparkle{transform-origin:center;animation:sparkleTwinkle 2.4s ease-in-out infinite}
+.sparkle.s2{animation-delay:0.8s}
+.sparkle.s3{animation-delay:1.6s}
+@keyframes toothFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes sparkleTwinkle{0%,100%{opacity:0;transform:scale(0.4)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes shineSweep{0%{opacity:0;transform:translateX(-30px) translateY(-30px)}50%{opacity:0.95}100%{opacity:0;transform:translateX(30px) translateY(30px)}}
+@media(max-width:1100px){.tooth-anim{display:none}}
+
 /* ─── STATS BAR ─── */
 .stats{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stats-inner{max-width:1100px;margin:0 auto;display:flex;padding:0}
 .stat{flex:1;padding:30px 20px;text-align:center;border-right:1px solid var(--border);position:relative}
 .stat:last-child{border-right:none}
-.stat-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:600;color:var(--accent);line-height:1}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:600;color:var(--accent);line-height:1}
 .stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:6px}
 
 /* ─── SECTIONS ─── */
 .section-tag{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .section-tag::before{content:'';width:28px;height:1px;background:var(--accent)}
-.section-h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,46px);font-weight:600;color:var(--text-white);line-height:1.15;margin-bottom:16px}
+.section-h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,3.8vw,46px);font-weight:600;color:var(--text-white);line-height:1.15;margin-bottom:16px}
 .section-sub{font-size:15px;color:var(--text-soft);font-weight:300;line-height:1.7;max-width:580px}
 
 /* ─── ABOUT ─── */
@@ -114,7 +127,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .about-media{position:relative}
 .about-img{width:100%;height:500px;object-fit:cover;border-radius:2px}
 .about-card{position:absolute;bottom:-28px;right:-28px;background:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.55);padding:22px 26px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px rgba(10,25,47,0.06);border-radius:12px}
-.about-card-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:600;color:var(--accent);line-height:1}
+.about-card-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:600;color:var(--accent);line-height:1}
 .about-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:4px}
 .about-text p{color:var(--text-soft);font-size:15px;line-height:1.8;margin-bottom:20px;font-weight:300}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:36px}
@@ -131,7 +144,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .treat-card{flex:0 0 calc((100% - 60px)/4);background:var(--surface);border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:var(--transition);position:relative;padding:32px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px}
 .treat-card:hover{border-color:rgba(249,115,22,0.4);box-shadow:0 20px 40px rgba(10,25,47,0.06),0 8px 24px rgba(249,115,22,0.10);transform:translateY(-3px);background:rgba(249,115,22,0.04)}
 .treat-icon{width:56px;height:56px;border-radius:12px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.treat-card h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--text-white);line-height:1.2}
+.treat-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text-white);line-height:1.2}
 .treat-card p{font-size:13px;color:var(--text-soft);line-height:1.65;font-weight:300}
 .carousel-controls{display:flex;align-items:center;gap:10px}
 .ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition)}
@@ -152,7 +165,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .svc-inner:hover{border-color:rgba(249,115,22,0.35);background:rgba(249,115,22,0.04)}
 .svc-icon{width:66px;height:66px;border-radius:12px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--surface);border:1px solid var(--border)}
 .svc-inner:nth-child(odd) .svc-icon{background:var(--accent-glow);border-color:rgba(249,115,22,0.25)}
-.svc-inner h4{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--text-white);margin-bottom:10px}
+.svc-inner h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:600;color:var(--text-white);margin-bottom:10px}
 .svc-inner p{font-size:12px;color:var(--text-muted);line-height:1.6}
 .svc-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:36px}
 
@@ -162,7 +175,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .doctor-img-wrap{position:relative;flex-shrink:0}
 .doctor-img{width:100%;height:520px;object-fit:cover;object-position:top;border-radius:2px}
 .doctor-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(249,115,22,0.95) 0%,rgba(249,115,22,0.6) 100%);padding:22px 22px 24px;backdrop-filter:blur(10px)}
-.doctor-badge strong{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;display:block;color:var(--text-on-accent)}
+.doctor-badge strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:600;display:block;color:var(--text-on-accent)}
 .doctor-badge span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.75)}
 .doctor-text .section-tag{margin-top:4px}
 .doctor-meta{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:22px}
@@ -182,8 +195,8 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .testi-slide{flex:0 0 50%;padding:0 10px}
 .testi-card{background:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px rgba(10,25,47,0.05);padding:36px;height:100%;border-radius:12px;transition:var(--transition)}
 .testi-card:hover{border-color:rgba(249,115,22,0.35)}
-.testi-q{font-family:'Playfair Display',serif;font-size:72px;line-height:0.6;color:var(--accent);opacity:0.6;margin-bottom:18px;display:block;font-weight:300}
-.testi-author{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--text-white);margin-bottom:16px}
+.testi-q{font-family:'Plus Jakarta Sans',sans-serif;font-size:72px;line-height:0.6;color:var(--accent);opacity:0.6;margin-bottom:18px;display:block;font-weight:300}
+.testi-author{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:600;color:var(--text-white);margin-bottom:16px}
 .testi-text{font-size:14px;color:var(--text-soft);line-height:1.8;margin-bottom:14px;font-weight:300}
 .testi-source{font-size:12px;color:var(--text-muted);font-style:italic;margin-bottom:14px}
 .testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px}
@@ -218,7 +231,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .gallery-item:hover img{transform:scale(1.06)}
 .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,47,0.55) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
 .gallery-item:hover::after{opacity:1}
-.gallery-item .gallery-caption{position:absolute;bottom:14px;left:16px;right:16px;color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s;z-index:2}
+.gallery-item .gallery-caption{position:absolute;bottom:14px;left:16px;right:16px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:600;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s;z-index:2}
 .gallery-item:hover .gallery-caption{opacity:1;transform:translateY(0)}
 .gallery-feature{grid-column:span 2;grid-row:span 2}
 .gallery-feature .gallery-caption{font-size:24px;bottom:22px;left:22px}
@@ -231,7 +244,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .contact-map{max-width:1200px;margin:60px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 24px 48px rgba(10,25,47,0.08);border:1px solid var(--border-light);background:var(--surface)}
 .contact-map iframe{display:block;width:100%;height:480px;border:none}
 .contact-map-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 24px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.contact-map-header strong{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-white);display:flex;align-items:center;gap:10px}
+.contact-map-header strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text-white);display:flex;align-items:center;gap:10px}
 .contact-map-header strong i{color:var(--accent)}
 .contact-map-header a{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:8px;transition:color 0.2s}
 .contact-map-header a:hover{color:var(--accent-dark)}
@@ -248,7 +261,7 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .hours-row span:first-child{color:var(--text-soft)}
 .hours-row span:last-child{color:var(--text-white);font-weight:600}
 .booking-box{background:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px rgba(10,25,47,0.05);padding:38px;border-radius:12px}
-.booking-box h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-white);margin-bottom:26px}
+.booking-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:600;color:var(--text-white);margin-bottom:26px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
 .fg label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
@@ -267,7 +280,7 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
 .f-brand{}
 .f-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .f-logo-mark{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff}
-.f-logo-text{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-white);line-height:1.2}
+.f-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text-white);line-height:1.2}
 .f-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:600}
 .f-brand p{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:22px}
 .f-sub{display:flex}
@@ -391,6 +404,39 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       <a href="#contact" class="btn-accent"><i class="fas fa-calendar-check"></i>Book an Appointment</a>
       <a href="#treatments" class="btn-ghost"><i class="fas fa-tooth"></i>View Treatments</a>
     </div>
+  </div>
+  <div class="tooth-anim" aria-hidden="true">
+    <svg viewBox="-6 -6 112 122" class="tooth-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="toothFill" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#FFE9D5"/>
+        </linearGradient>
+        <linearGradient id="toothShineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+          <stop offset="50%" stop-color="rgba(255,255,255,0.95)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </linearGradient>
+        <clipPath id="toothClip">
+          <path d="M50 6 C 76 6, 92 22, 90 52 C 87 80, 78 104, 66 107 C 58 108, 56 88, 50 88 C 44 88, 42 108, 34 107 C 22 104, 13 80, 10 52 C 8 22, 24 6, 50 6 Z"/>
+        </clipPath>
+      </defs>
+      <path d="M50 6 C 76 6, 92 22, 90 52 C 87 80, 78 104, 66 107 C 58 108, 56 88, 50 88 C 44 88, 42 108, 34 107 C 22 104, 13 80, 10 52 C 8 22, 24 6, 50 6 Z"
+            fill="url(#toothFill)" stroke="#0F172A" stroke-width="2.5"/>
+      <ellipse cx="34" cy="38" rx="6" ry="14" fill="white" opacity="0.85" transform="rotate(-22 34 38)"/>
+      <g clip-path="url(#toothClip)">
+        <rect class="tooth-shine" x="0" y="0" width="100" height="110" fill="url(#toothShineGrad)"/>
+      </g>
+      <g class="sparkle">
+        <path d="M84 12 l 1.4 -8 l 1.4 8 l 8 1.4 l -8 1.4 l -1.4 8 l -1.4 -8 l -8 -1.4 z" fill="#F97316"/>
+      </g>
+      <g class="sparkle s2">
+        <path d="M12 78 l 0.8 -5 l 0.8 5 l 5 0.8 l -5 0.8 l -0.8 5 l -0.8 -5 l -5 -0.8 z" fill="#F97316"/>
+      </g>
+      <g class="sparkle s3">
+        <path d="M93 70 l 0.5 -3 l 0.5 3 l 3 0.5 l -3 0.5 l -0.5 3 l -0.5 -3 l -3 -0.5 z" fill="#FB923C"/>
+      </g>
+    </svg>
   </div>
   <div class="hero-scroll">Scroll to explore</div>
 </section>
