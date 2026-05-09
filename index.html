@@ -1,862 +1,696 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Dental Office — Pumpwell, Mangaluru | Dr. Prathap M S Nair</title>
 <meta name="description" content="The Dental Office, Pumpwell, Mangaluru — Dr. Prathap M S Nair, BDS. Cosmetic, restorative & implant dentistry with 27 years of experience. Located at Creek Galaxy, opp. Indiana Hospital Road.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0A192F',
+        'ink-soft': '#1b1b1d',
+        body: '#44474d',
+        muted: '#75777e',
+        divider: '#c5c6cd',
+        surface: '#fbf9fb',
+        'surface-alt': '#f5f3f5',
+        'surface-warm': '#fff8f1',
+        accent: '#F97316',
+        'accent-dark': '#EA580C',
+        'accent-soft': '#FFEDD5',
+        error: '#ba1a1a'
+      },
+      fontFamily: {
+        display: ['"Playfair Display"', 'serif'],
+        body: ['Inter', 'sans-serif']
+      },
+      maxWidth: {
+        container: '1280px'
+      }
+    }
+  }
+}
+</script>
 <style>
-/* ─── RESET & ROOT ─── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --primary:#FFFFFF;
-  --primary-mid:#FFF8F1;
-  --primary-light:#FFFFFF;
-  --accent:#F97316;
-  --accent-dark:#EA580C;
-  --accent-glow:rgba(249,115,22,0.10);
-  --accent2:#FB923C;
-  --text-white:#0F172A;
-  --text-soft:rgba(15,23,42,0.72);
-  --text-muted:rgba(15,23,42,0.55);
-  --text-on-accent:#FFFFFF;
-  --border:rgba(15,23,42,0.10);
-  --border-light:rgba(15,23,42,0.16);
-  --surface:rgba(15,23,42,0.03);
-  --surface2:rgba(15,23,42,0.05);
-  --gold:#D4A847;
-  --gold-light:rgba(212,168,71,0.15);
-  --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--primary);color:var(--text-white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-/* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.75s ease,transform 0.75s ease}
-.reveal.active{opacity:1;transform:none}
-
-/* ─── NAV ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;transition:var(--transition);background:transparent}
-nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(15,23,42,0.06)}
-.nav-logo{display:flex;align-items:center;gap:14px}
-.nav-logo-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--text-on-accent);flex-shrink:0;box-shadow:0 4px 14px rgba(249,115,22,0.4)}
-.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text-white);line-height:1.1}
-.nav-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)}
-.nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-soft);padding:8px 13px;border-radius:6px;transition:var(--transition)}
-.nav-links a:hover,.nav-links a.active{color:var(--text-white);background:var(--surface2)}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-phone{font-size:13px;font-weight:600;color:var(--text-soft);display:flex;align-items:center;gap:7px;transition:color 0.2s}
-.nav-phone i{color:var(--accent);font-size:14px}
-.nav-phone:hover{color:var(--text-white)}
-.nav-cta{background:var(--accent);color:var(--text-on-accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:6px;transition:var(--transition);white-space:nowrap}
-.nav-cta:hover{background:var(--accent-dark);box-shadow:0 4px 20px rgba(249,115,22,0.5)}
-.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.menu-toggle span{display:block;width:22px;height:2px;background:var(--text-white);border-radius:2px;transition:var(--transition)}
-
-/* ─── HERO ─── */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--primary)}
-.hero-bg{position:absolute;inset:0;background:url('WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg') center/cover no-repeat;opacity:0.22}
-.hero-mesh{position:absolute;inset:0;background:
-  radial-gradient(ellipse 70% 55% at 10% 15%,rgba(249,115,22,0.38) 0%,transparent 55%),
-  radial-gradient(ellipse 60% 50% at 88% 20%,rgba(251,146,60,0.18) 0%,transparent 55%),
-  radial-gradient(ellipse 55% 60% at 50% 100%,rgba(249,115,22,0.22) 0%,transparent 55%);
-  animation:meshMove 16s ease-in-out infinite alternate}
-@keyframes meshMove{0%{opacity:1}100%{opacity:0.7;background:
-  radial-gradient(ellipse 70% 55% at 20% 25%,rgba(249,115,22,0.35) 0%,transparent 55%),
-  radial-gradient(ellipse 60% 50% at 80% 30%,rgba(251,146,60,0.2) 0%,transparent 55%),
-  radial-gradient(ellipse 55% 60% at 60% 95%,rgba(249,115,22,0.25) 0%,transparent 55%)}}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(15,23,42,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,0.04) 1px,transparent 1px);background-size:60px 60px}
-.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;pointer-events:none}
-.blob1{width:500px;height:500px;background:var(--accent);top:-150px;right:-150px;animation:floatA 15s ease-in-out infinite}
-.blob2{width:400px;height:400px;background:var(--accent-dark);bottom:-160px;left:-120px;animation:floatB 20s ease-in-out infinite}
-@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,70px)}}
-@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,-50px)}}
-.hero-content{position:relative;z-index:3;padding:130px 5% 90px;max-width:820px}
-.hero-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.35);border-radius:100px;padding:7px 18px;margin-bottom:30px;backdrop-filter:blur(10px)}
-.hero-pill .dot{width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero-pill span{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(15,23,42,0.85)}
-.hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,7vw,88px);line-height:1.04;color:var(--text-white);margin-bottom:24px;font-weight:600;letter-spacing:-0.01em}
-.hero h1 em{font-style:italic;font-weight:300;background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:clamp(15px,1.6vw,18px);color:var(--text-soft);max-width:520px;margin-bottom:40px;font-weight:300;line-height:1.7}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-accent{background:var(--accent);color:var(--text-on-accent);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
-.btn-accent:hover{background:var(--accent-dark);box-shadow:0 6px 24px rgba(249,115,22,0.5);transform:translateY(-1px)}
-.btn-ghost{color:var(--text-soft);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:13px 26px;border-radius:6px;border:1px solid var(--border-light);transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
-.btn-ghost:hover{color:var(--text-white);border-color:rgba(15,23,42,0.35);background:var(--surface2)}
-.hero-scroll{position:absolute;bottom:32px;left:5%;display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted)}
-.hero-scroll::after{content:'';width:40px;height:1px;background:var(--border-light)}
-
-/* ─── STATS BAR ─── */
-.stats{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stats-inner{max-width:1100px;margin:0 auto;display:flex;padding:0}
-.stat{flex:1;padding:30px 20px;text-align:center;border-right:1px solid var(--border);position:relative}
-.stat:last-child{border-right:none}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--accent);line-height:1}
-.stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:6px}
-
-/* ─── SECTIONS ─── */
-.section-tag{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.section-tag::before{content:'';width:28px;height:1px;background:var(--accent)}
-.section-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.8vw,46px);font-weight:600;color:var(--text-white);line-height:1.15;margin-bottom:16px}
-.section-sub{font-size:15px;color:var(--text-soft);font-weight:300;line-height:1.7;max-width:580px}
-
-/* ─── ABOUT ─── */
-.about{padding:100px 5%;background:var(--primary-mid)}
-.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-media{position:relative}
-.about-img{width:100%;height:500px;object-fit:cover;border-radius:2px}
-.about-card{position:absolute;bottom:-28px;right:-28px;background:var(--primary-light);border:1px solid var(--border-light);padding:22px 26px;backdrop-filter:blur(20px)}
-.about-card-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--accent);line-height:1}
-.about-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-top:4px}
-.about-text p{color:var(--text-soft);font-size:15px;line-height:1.8;margin-bottom:20px;font-weight:300}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:36px}
-.about-feat{background:var(--primary-mid);padding:20px;display:flex;align-items:flex-start;gap:13px}
-.about-feat-icon{width:34px;height:34px;border-radius:8px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.about-feat h5{font-size:13px;font-weight:700;color:var(--text-white);margin-bottom:4px}
-.about-feat p{font-size:12px;color:var(--text-muted);margin:0;line-height:1.5}
-
-/* ─── TREATMENTS ─── */
-.treatments{padding:100px 5%;background:var(--primary)}
-.treatments-top{max-width:1200px;margin:0 auto 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.treatments-carousel-wrap{max-width:1200px;margin:0 auto;overflow:hidden}
-.treat-track{display:flex;gap:20px;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
-.treat-card{flex:0 0 calc((100% - 60px)/4);background:var(--surface);border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:var(--transition);position:relative;padding:32px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px}
-.treat-card:hover{border-color:rgba(249,115,22,0.4);box-shadow:0 8px 32px rgba(249,115,22,0.15);transform:translateY(-3px);background:rgba(249,115,22,0.04)}
-.treat-icon{width:56px;height:56px;border-radius:12px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.treat-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text-white);line-height:1.2}
-.treat-card p{font-size:13px;color:var(--text-soft);line-height:1.65;font-weight:300}
-.carousel-controls{display:flex;align-items:center;gap:10px}
-.ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition)}
-.ctrl-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--text-on-accent)}
-.ctrl-dots{display:flex;gap:7px}
-.ctrl-dot{width:8px;height:8px;border-radius:50%;background:var(--border-light);cursor:pointer;transition:background 0.2s}
-.ctrl-dot.on{background:var(--accent)}
-
-/* ─── SERVICES ─── */
-.services{padding:100px 5%;background:var(--primary-mid)}
-.services-header{max-width:1200px;margin:0 auto 48px;text-align:center}
-.services-header .section-tag{justify-content:center}
-.services-header .section-tag::before{display:none}
-.services-grid-wrap{max-width:1200px;margin:0 auto;overflow:hidden}
-.services-track{display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1)}
-.svc-card{flex:0 0 calc(100%/5);padding:1px}
-.svc-inner{background:var(--primary-light);border:1px solid var(--border);padding:32px 20px;height:100%;text-align:center;transition:var(--transition);cursor:default}
-.svc-inner:hover{border-color:rgba(249,115,22,0.35);background:rgba(249,115,22,0.04)}
-.svc-icon{width:66px;height:66px;border-radius:12px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--surface);border:1px solid var(--border)}
-.svc-inner:nth-child(odd) .svc-icon{background:var(--accent-glow);border-color:rgba(249,115,22,0.25)}
-.svc-inner h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text-white);margin-bottom:10px}
-.svc-inner p{font-size:12px;color:var(--text-muted);line-height:1.6}
-.svc-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:36px}
-
-/* ─── DOCTOR ─── */
-.doctor{padding:100px 5%;background:var(--primary)}
-.doctor-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:start}
-.doctor-img-wrap{position:relative;flex-shrink:0}
-.doctor-img{width:100%;height:520px;object-fit:cover;object-position:top;border-radius:2px}
-.doctor-badge{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(249,115,22,0.95) 0%,rgba(249,115,22,0.6) 100%);padding:22px 22px 24px;backdrop-filter:blur(10px)}
-.doctor-badge strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:block;color:var(--text-on-accent)}
-.doctor-badge span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.75)}
-.doctor-text .section-tag{margin-top:4px}
-.doctor-meta{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:22px}
-.doctor-text p{font-size:15px;color:var(--text-soft);line-height:1.8;font-weight:300;margin-bottom:18px}
-.quals{display:flex;flex-direction:column;gap:10px;margin:24px 0}
-.qual{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-soft)}
-.qual i{color:var(--accent);font-size:13px;flex-shrink:0}
-.doctor-quote{margin-top:8px;padding:20px 22px;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 4px 4px 0}
-.doctor-quote p{font-style:italic;font-size:15px;color:var(--text-soft);line-height:1.7;margin:0}
-.doctor-quote cite{font-size:12px;color:var(--text-muted);font-style:normal;display:block;margin-top:10px}
-
-/* ─── TESTIMONIALS ─── */
-.testimonials{padding:100px 5%;background:var(--primary-mid)}
-.testi-header{max-width:1100px;margin:0 auto 50px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.testi-wrap{max-width:1100px;margin:0 auto;overflow:hidden}
-.testi-track{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
-.testi-slide{flex:0 0 50%;padding:0 10px}
-.testi-card{background:var(--primary-light);border:1px solid var(--border);padding:36px;height:100%;transition:var(--transition)}
-.testi-card:hover{border-color:rgba(249,115,22,0.35)}
-.testi-q{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:0.6;color:var(--accent);opacity:0.6;margin-bottom:18px;display:block;font-weight:300}
-.testi-author{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text-white);margin-bottom:16px}
-.testi-text{font-size:14px;color:var(--text-soft);line-height:1.8;margin-bottom:14px;font-weight:300}
-.testi-source{font-size:12px;color:var(--text-muted);font-style:italic;margin-bottom:14px}
-.testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px}
-.testi-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:40px}
-
-/* ─── FAQ ─── */
-.faq{padding:100px 5%;background:var(--primary)}
-.faq-inner{max-width:880px;margin:0 auto}
-.faq-header{text-align:center;margin-bottom:48px}
-.faq-header .section-tag{justify-content:center}
-.faq-header .section-tag::before{display:none}
-.faq-list{display:flex;flex-direction:column;gap:14px}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:var(--transition)}
-.faq-item:hover{border-color:rgba(249,115,22,0.3)}
-.faq-item.open{border-color:rgba(249,115,22,0.5);background:rgba(249,115,22,0.04)}
-.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:15px;font-weight:600;color:var(--text-white);font-family:'Inter',sans-serif}
-.faq-q i{color:var(--accent);font-size:14px;transition:transform 0.3s;flex-shrink:0}
-.faq-item.open .faq-q i{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 24px}
-.faq-item.open .faq-a{max-height:400px;padding:0 24px 22px}
-.faq-a p{font-size:14px;color:var(--text-soft);line-height:1.7;font-weight:300}
-
-/* ─── CONTACT ─── */
-.contact{padding:100px 5%;background:var(--primary)}
-.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
-.contact-info .section-sub{margin-bottom:32px}
-.c-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
-.c-icon{width:38px;height:38px;border-radius:8px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.25);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.c-detail strong{display:block;font-size:13px;color:var(--text-white);font-weight:600;margin-bottom:3px}
-.c-detail span{font-size:13px;color:var(--text-soft)}
-.hours-grid{margin-top:32px;border:1px solid var(--border);overflow:hidden}
-.hours-head{background:var(--accent);padding:12px 20px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-on-accent)}
-.hours-row{display:flex;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--border);font-size:13px}
-.hours-row:last-child{border-bottom:none}
-.hours-row span:first-child{color:var(--text-soft)}
-.hours-row span:last-child{color:var(--text-white);font-weight:600}
-.booking-box{background:var(--surface);border:1px solid var(--border);padding:38px}
-.booking-box h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--text-white);margin-bottom:26px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.fg label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
-.fg input,.fg select,.fg textarea{background:var(--surface2);border:1px solid var(--border);color:var(--text-white);padding:12px 14px;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border 0.2s;border-radius:4px;-webkit-appearance:none}
-.fg select option{background:var(--primary-mid)}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--text-muted)}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(249,115,22,0.6);background:rgba(249,115,22,0.06)}
-.fg textarea{resize:vertical;min-height:88px}
-.btn-wa{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:var(--transition);border-radius:4px;margin-top:6px}
-.btn-wa:hover{opacity:0.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,0.3)}
-.btn-wa i{font-size:17px}
-
-/* ─── FOOTER ─── */
-footer{background:var(--primary-mid);border-top:1px solid var(--border)}
-.footer-main{max-width:1200px;margin:0 auto;padding:60px 5% 40px;display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;gap:50px}
-.f-brand{}
-.f-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.f-logo-mark{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff}
-.f-logo-text{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text-white);line-height:1.2}
-.f-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:600}
-.f-brand p{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:22px}
-.f-sub{display:flex}
-.f-sub input{flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text-white);padding:10px 14px;font-size:12px;font-family:'Inter',sans-serif;outline:none;border-radius:4px 0 0 4px}
-.f-sub input::placeholder{color:var(--text-muted)}
-.f-sub input:focus{border-color:rgba(249,115,22,0.5)}
-.f-sub button{background:var(--accent);color:#fff;border:none;padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:0 4px 4px 0;transition:background 0.2s;white-space:nowrap}
-.f-sub button:hover{background:var(--accent-dark)}
-.f-col h5{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-white);margin-bottom:18px}
-.f-links{display:flex;flex-direction:column;gap:9px}
-.f-links a{font-size:13px;color:var(--text-muted);transition:color 0.2s}
-.f-links a:hover{color:var(--text-white)}
-.f-hours{display:flex;flex-direction:column;gap:9px}
-.f-hour{display:flex;justify-content:space-between;font-size:12px;padding-bottom:9px;border-bottom:1px solid var(--border)}
-.f-hour:last-child{border:none}
-.f-hour span:first-child{color:var(--text-muted)}
-.f-hour span:last-child{color:var(--text-soft);font-weight:500}
-.f-ig{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.f-ig-item{aspect-ratio:1;overflow:hidden}
-.f-ig-item img{width:100%;height:100%;object-fit:cover;filter:brightness(0.95);transition:all 0.3s}
-.f-ig-item:hover img{filter:brightness(1);transform:scale(1.08)}
-.footer-bottom{border-top:1px solid var(--border);padding:22px 5%}
-.footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-bottom-inner p{font-size:12px;color:var(--text-muted)}
-.footer-bottom-links{display:flex;gap:20px}
-.footer-bottom-links a{font-size:12px;color:var(--text-muted);transition:color 0.2s}
-.footer-bottom-links a:hover{color:var(--text-white)}
-.f-socials{display:flex;gap:8px;margin-top:16px}
-.f-soc{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;transition:var(--transition)}
-.f-soc:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-
-/* ─── MOBILE BAR ─── */
-.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--primary-light);border-top:1px solid var(--border)}
-.mob-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:11px 8px;color:var(--text-soft);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;transition:var(--transition)}
-.mob-bar a:first-child{border-right:1px solid var(--border)}
-.mob-bar a i{font-size:18px;color:var(--accent)}
-.mob-bar a:hover{background:var(--surface2);color:var(--text-white)}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:1100px){
-  .footer-main{grid-template-columns:1fr 1fr;gap:36px}
-  .f-ig{display:none}
-}
-@media(max-width:900px){
-  .about-inner,.doctor-inner,.contact-inner{grid-template-columns:1fr;gap:44px}
-  .about-img{height:360px}
-  .about-card{right:16px;bottom:-18px}
-  .doctor-img{height:380px}
-  .treat-card{flex:0 0 calc((100% - 20px)/2)}
-  .svc-card{flex:0 0 calc(100%/3)}
-  .testi-slide{flex:0 0 100%;padding:0}
-}
-@media(max-width:768px){
-  nav{padding:16px 5%}
-  .nav-links,.nav-right{display:none}
-  .menu-toggle{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);padding:16px 0 24px;border-bottom:1px solid var(--border);gap:0;z-index:999}
-  .nav-links.open a{padding:13px 24px;border-bottom:1px solid var(--border)}
-  .stats-inner{flex-wrap:wrap}
-  .stat{flex:0 0 50%;border-bottom:1px solid var(--border)}
-  .stat:nth-child(2){border-right:none}
-  .treat-card{flex:0 0 calc((100% - 16px)/2)}
-  .svc-card{flex:0 0 50%}
-  .testi-track,.treat-track,.services-track{gap:0}
-  .treatments-top{flex-direction:column;align-items:flex-start;gap:20px}
-  .testi-header{flex-direction:column;align-items:flex-start}
-  .form-row{grid-template-columns:1fr}
-  .footer-main{grid-template-columns:1fr;gap:32px}
-  .mob-bar{display:flex}
-  body{padding-bottom:64px}
-}
-@media(max-width:480px){
-  .treat-card{flex:0 0 100%}
-  .svc-card{flex:0 0 100%}
-  .stat{flex:0 0 100%;border-right:none}
-  .hero h1{font-size:42px}
-  .hero-actions{flex-direction:column;gap:10px}
-  .btn-accent,.btn-ghost{justify-content:center}
-}
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, sans-serif; color: #44474d; background: #fbf9fb; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: #0A192F; }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.06);
+  }
+  .orange-glow {
+    background: radial-gradient(circle at center, rgba(249,115,22,0.18) 0%, transparent 70%);
+  }
+  .navy-glow {
+    background: radial-gradient(circle at center, rgba(10,25,47,0.10) 0%, transparent 70%);
+  }
+  .label-caps { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; line-height: 1; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.active { opacity: 1; transform: none; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .icon-fill { font-variation-settings: 'FILL' 1, 'wght' 500; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-arrow { transform: rotate(180deg); }
+  .scroll-fade::after {
+    content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 80px;
+    background: linear-gradient(to right, transparent, #fbf9fb); pointer-events: none;
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .float-y { animation: float-y 4s ease-in-out infinite; }
 </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-mark"><i class="fas fa-tooth"></i></div>
-    <div class="nav-logo-text">The Dental Office<small>Pumpwell, Mangaluru</small></div>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="#" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#treatments">Treatments</a>
-    <a href="#services">Services</a>
-    <a href="#doctor">Our Doctor</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="nav-right">
-    <a href="tel:917892029550" class="nav-phone"><i class="fas fa-phone-volume"></i>+91 78920 29550</a>
-    <a href="#contact" class="nav-cta">Book Now</a>
-  </div>
-  <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-mesh"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-blob blob1"></div>
-  <div class="hero-blob blob2"></div>
-  <div class="hero-content">
-    <div class="hero-pill"><span class="dot"></span><span>Now Accepting New Patients — Emergency Same Day</span></div>
-    <div class="hero-eyebrow">🦷 Dr. Prathap M S Nair, BDS &nbsp;·&nbsp; Pumpwell, Mangaluru</div>
-    <h1>Expert Dental Care,<br><em>Built Around You</em></h1>
-    <p>Family-friendly, established dental practice at Creek Galaxy, Pumpwell, Mangaluru. Cosmetic, restorative and implant dentistry — delivered with 27 years of experience and a gentle, judgement-free approach.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-accent"><i class="fas fa-calendar-check"></i>Book an Appointment</a>
-      <a href="#treatments" class="btn-ghost"><i class="fas fa-tooth"></i>View Treatments</a>
+<!-- ─── NAV ─── -->
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/0">
+  <nav class="flex justify-between items-center h-20 px-5 md:px-6 max-w-container mx-auto">
+    <a href="#" class="flex items-center gap-3">
+      <div class="bg-accent p-2 rounded-lg text-white shadow-md">
+        <span class="material-symbols-outlined text-[22px] icon-fill">dentistry</span>
+      </div>
+      <span class="font-display text-xl font-bold text-ink leading-tight">The Dental Office<br><span class="font-body text-[10px] font-semibold tracking-[0.18em] text-muted uppercase">Pumpwell · Mangaluru</span></span>
+    </a>
+    <div id="navLinks" class="hidden md:flex gap-8 items-center">
+      <a href="#home"        class="text-body hover:text-accent transition-colors label-caps">Home</a>
+      <a href="#about"       class="text-body hover:text-accent transition-colors label-caps">About</a>
+      <a href="#treatments"  class="text-body hover:text-accent transition-colors label-caps">Treatments</a>
+      <a href="#services"    class="text-body hover:text-accent transition-colors label-caps">Services</a>
+      <a href="#doctor"      class="text-body hover:text-accent transition-colors label-caps">Doctor</a>
+      <a href="#testimonials" class="text-body hover:text-accent transition-colors label-caps">Reviews</a>
+      <a href="#faq"         class="text-body hover:text-accent transition-colors label-caps">FAQ</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="tel:917892029550" class="hidden lg:flex items-center gap-2 text-ink font-semibold text-sm">
+        <span class="material-symbols-outlined text-[18px] text-accent">call</span>+91 78920 29550
+      </a>
+      <a href="#contact" class="bg-ink text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-accent transition-colors shadow-md">Book Now</a>
+      <button id="menuToggle" class="md:hidden text-ink p-2"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-divider/30">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="#home" class="py-3 label-caps text-body hover:text-accent">Home</a>
+      <a href="#about" class="py-3 label-caps text-body hover:text-accent">About</a>
+      <a href="#treatments" class="py-3 label-caps text-body hover:text-accent">Treatments</a>
+      <a href="#services" class="py-3 label-caps text-body hover:text-accent">Services</a>
+      <a href="#doctor" class="py-3 label-caps text-body hover:text-accent">Doctor</a>
+      <a href="#testimonials" class="py-3 label-caps text-body hover:text-accent">Reviews</a>
+      <a href="#faq" class="py-3 label-caps text-body hover:text-accent">FAQ</a>
     </div>
   </div>
-  <div class="hero-scroll">Scroll to explore</div>
-</section>
+</header>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-num">BDS</div><div class="stat-label">Qualified Dentist</div></div>
-    <div class="stat"><div class="stat-num" data-target="27">0</div><div class="stat-label">Years Experience</div></div>
-    <div class="stat"><div class="stat-num" data-target="25">0</div><div class="stat-label">Years as Specialist</div></div>
-    <div class="stat"><div class="stat-num" data-target="6">0</div><div class="stat-label">Days a Week</div></div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about reveal" id="about">
-  <div class="about-inner">
-    <div class="about-media reveal">
-      <img class="about-img" src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="The Dental Office Mangaluru Reception">
-      <div class="about-card">
-        <div class="about-card-num">27<span style="font-size:24px">+</span></div>
-        <div class="about-card-label">Years of Practice</div>
+<!-- ─── HERO ─── -->
+<section id="home" class="relative pt-32 md:pt-40 pb-20 md:pb-32 px-5 md:px-6 overflow-hidden">
+  <div class="absolute -top-40 -right-40 w-[600px] h-[600px] orange-glow pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] navy-glow pointer-events-none"></div>
+  <div class="relative max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div class="flex flex-col gap-8 reveal">
+      <div class="inline-flex items-center gap-3 self-start bg-white/70 backdrop-blur border border-divider/40 rounded-full px-4 py-2 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-accent pulse-dot"></span>
+        <span class="label-caps text-ink">Now Accepting New Patients · Same-Day Emergencies</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Dr. Prathap M S Nair · BDS</span>
+      </div>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight">
+        Expert Dental Care, <span class="italic font-medium text-accent">Built Around You.</span>
+      </h1>
+      <p class="text-lg text-body leading-relaxed max-w-xl">
+        Family-friendly, established dental practice at Creek Galaxy, Pumpwell — Mangaluru. Cosmetic, restorative and implant dentistry, delivered with 27 years of experience and a gentle, judgement-free approach.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-full font-bold flex items-center gap-3 shadow-lg shadow-accent/30 transition-all hover:scale-[0.98]">
+          <span class="material-symbols-outlined">event</span> Book an Appointment
+        </a>
+        <a href="#treatments" class="border border-ink/20 hover:border-ink text-ink px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-ink hover:text-white transition-colors">
+          <span class="material-symbols-outlined">dentistry</span> View Treatments
+        </a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 pt-8 border-t border-divider/40 mt-4">
+        <div><div class="font-display text-3xl text-ink font-bold">27<span class="text-accent">+</span></div><div class="label-caps text-muted mt-1">Years</div></div>
+        <div><div class="font-display text-3xl text-ink font-bold">25</div><div class="label-caps text-muted mt-1">Specialist</div></div>
+        <div><div class="font-display text-3xl text-ink font-bold">6</div><div class="label-caps text-muted mt-1">Days a Week</div></div>
       </div>
     </div>
-    <div class="about-text reveal">
-      <div class="section-tag">About Our Practice</div>
-      <h2 class="section-h2">A Practice You Can Trust, in the Heart of Mangaluru</h2>
-      <p>The Dental Office is a trusted, established, and affordable dental practice in Pumpwell, Mangaluru — serving patients of all ages from across the city and beyond. Led by Dr. Prathap M S Nair (BDS, 27 years experience), our clinic is built around a comfortable, welcoming environment, particularly for those who experience dental anxiety.</p>
-      <p>We offer same-day emergency appointments where possible and are committed to delivering high-quality, transparent dental care using the latest techniques and modern technology — without the jargon or unnecessary treatment.</p>
-      <div class="about-features">
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-heart"></i></div><div><h5>Compassionate Care</h5><p>Gentle approach for anxious patients</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-microscope"></i></div><div><h5>Modern Technology</h5><p>Latest equipment &amp; techniques</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-users"></i></div><div><h5>All Ages Welcome</h5><p>Paediatric to senior dental care</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-bolt"></i></div><div><h5>Emergency Slots</h5><p>Same-day bookings where possible</p></div></div>
+    <div class="relative reveal">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+        <img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="The Dental Office Treatment Room" class="w-full h-[480px] md:h-[600px] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- COSMETIC TREATMENTS -->
-<section class="treatments reveal" id="treatments">
-  <div class="treatments-top">
-    <div>
-      <div class="section-tag">Cosmetic Dental Services</div>
-      <h2 class="section-h2">Treatments We Offer</h2>
-    </div>
-    <div class="carousel-controls" id="treatControls">
-      <button class="ctrl-btn" id="treatPrev"><i class="fas fa-chevron-left"></i></button>
-      <div class="ctrl-dots" id="treatDots"></div>
-      <button class="ctrl-btn" id="treatNext"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </div>
-  <div class="treatments-carousel-wrap">
-    <div class="treat-track" id="treatTrack">
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-tooth"></i></div>
-        <h4>Teeth Whitening</h4>
-        <p>Dentist-administered in-office bleaching and laser whitening — safe, effective, and noticeably brighter results.</p>
+      <div class="absolute -bottom-8 -left-4 md:left-8 glass-card p-6 md:p-8 rounded-2xl float-y">
+        <div class="flex items-center gap-4">
+          <div class="bg-accent/15 text-accent p-3 rounded-xl">
+            <span class="material-symbols-outlined text-[28px] icon-fill">verified</span>
+          </div>
+          <div>
+            <div class="font-display text-2xl text-ink font-bold leading-none">BDS Verified</div>
+            <div class="label-caps text-muted mt-1">Medical Reg.</div>
+          </div>
+        </div>
       </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-gem"></i></div>
-        <h4>Ceramic Veneers &amp; Crowns</h4>
-        <p>Custom porcelain veneers, zirconia and ceramic crowns to restore shape, colour and strength.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-grin"></i></div>
-        <h4>Clear Aligners</h4>
-        <p>Invisible aligners and clear braces for a discreet alternative to traditional metal orthodontics.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-spray-can"></i></div>
-        <h4>Scaling &amp; Polishing</h4>
-        <p>Professional cleaning to remove tartar and plaque build-up — keeping teeth and gums healthy.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-fill-drip"></i></div>
-        <h4>Tooth-Coloured Fillings</h4>
-        <p>Mercury-free composite fillings that blend naturally with your teeth for a seamless finish.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-smile-beam"></i></div>
-        <h4>Smile Designing</h4>
-        <p>Comprehensive cosmetic plan combining veneers, whitening and reshaping to refine your smile.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-screwdriver"></i></div>
-        <h4>Dental Implants</h4>
-        <p>Implant fixing, surgery and bone grafting — long-lasting replacements that look and feel natural.</p>
-      </div>
-      <div class="treat-card">
-        <div class="treat-icon"><i class="fas fa-microscope"></i></div>
-        <h4>Root Canal Treatment</h4>
-        <p>Single-sitting RCT and microscope-assisted root canal treatment for precise, comfortable care.</p>
+      <div class="absolute -top-6 -right-4 md:right-6 glass-card p-5 rounded-2xl flex items-center gap-3">
+        <span class="material-symbols-outlined text-accent text-[28px] icon-fill">star</span>
+        <div>
+          <div class="font-display text-xl text-ink font-bold leading-none">5.0</div>
+          <div class="label-caps text-muted mt-1">Google Reviews</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESTORATIVE SERVICES -->
-<section class="services reveal" id="services">
-  <div class="services-header">
-    <div class="section-tag">Restorative Services</div>
-    <h2 class="section-h2">Putting Tooth Preservation First</h2>
-    <p class="section-sub" style="margin:0 auto">From routine fillings to complex restorations — we keep your natural teeth healthy and strong for as long as possible.</p>
-  </div>
-  <div class="services-grid-wrap">
-    <div class="services-track" id="svcTrack">
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🦷</div><h4>Fillings</h4><p>Treats small holes or cavities caused by decay, restoring the tooth's structure and function.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔬</div><h4>Root Canal</h4><p>Endodontic treatment that aims to treat infection at the centre of a tooth, relieving pain.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">👑</div><h4>Crowns</h4><p>Tooth-shaped coverings placed over damaged teeth to restore their shape, size, and strength.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔗</div><h4>Bridges</h4><p>Replaces missing teeth by bridging the gap between two remaining teeth for a complete smile.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😁</div><h4>Dentures</h4><p>Custom-fit prosthetics that replace missing teeth and restore the appearance of the mouth.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🛡️</div><h4>Gum Treatment</h4><p>Professional periodontal care to treat gum disease and prevent bone loss over time.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">✨</div><h4>Scale &amp; Polish</h4><p>Professional cleaning to remove tartar and plaque build-up, keeping gums healthy.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🩺</div><h4>Check-Up &amp; X-Ray</h4><p>Digital X-rays and thorough examination to detect issues early and plan treatment proactively.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">👶</div><h4>Paediatric Dentistry</h4><p>Gentle, child-friendly dental care to build healthy habits and a positive attitude early.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🚑</div><h4>Emergency Care</h4><p>Same-day appointments for toothaches, broken teeth, and urgent dental problems.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😬</div><h4>Aligners &amp; Invisible Braces</h4><p>Clear, removable aligners and invisible braces for discreet teeth straightening.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">⚙️</div><h4>Dental Implants</h4><p>Implant fixing, surgery and immediate-loading options to restore missing teeth.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">💎</div><h4>Zirconia &amp; Porcelain Crowns</h4><p>Premium ceramic, zirconia and porcelain crowns for natural-looking restorations.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">😄</div><h4>Smile Designing</h4><p>Customised smile makeovers combining veneers, whitening and reshaping.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🦷</div><h4>Wisdom Tooth &amp; Surgical Extraction</h4><p>Safe, gentle removal of impacted and problematic wisdom teeth.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔆</div><h4>Laser Dentistry</h4><p>Cosmetic laser dentistry, laser teeth whitening and gum treatment.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🛡️</div><h4>Mouth Guards</h4><p>Custom-fit night guards and sports mouth guards for protection.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">🔬</div><h4>RCT Under Microscope</h4><p>Single-sitting and microscope-assisted root canal treatment for precision.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">📱</div><h4>Online Booking</h4><p>Book your dentist appointment online — quick, easy and contact-free.</p></div></div>
-      <div class="svc-card"><div class="svc-inner"><div class="svc-icon">♿</div><h4>Wheelchair Accessible</h4><p>Our clinic is fully wheelchair accessible for patients of all mobility levels.</p></div></div>
-    </div>
-  </div>
-  <div class="svc-controls">
-    <button class="ctrl-btn" id="svcPrev"><i class="fas fa-chevron-left"></i></button>
-    <div class="ctrl-dots" id="svcDots"></div>
-    <button class="ctrl-btn" id="svcNext"><i class="fas fa-chevron-right"></i></button>
-  </div>
-</section>
-
-<!-- DOCTOR -->
-<section class="doctor reveal" id="doctor">
-  <div class="doctor-inner" style="grid-template-columns:1fr;max-width:900px">
-    <div class="doctor-text reveal">
-      <div class="section-tag">Meet Your Dentist</div>
-      <h2 class="section-h2">Dr. Prathap M S Nair</h2>
-      <p class="doctor-meta">BDS · Cosmetic/Aesthetic Dentist · Restorative Dentist · Dental Surgeon</p>
-      <p>Dr. Prathap M S Nair is a Cosmetic/Aesthetic Dentist, Restorative Dentist and Dental Surgeon practising at The Dental Office in Pumpwell, Mangaluru. He brings 27 years of overall experience — 25 of those as a specialist — to every patient he treats.</p>
-      <p>He completed his BDS from KVG Medical College, Sullia, in 1999 and his medical registration is verified. With a warm, patient-centred approach and a commitment to evidence-based dentistry, every visit is tailored to your unique needs and comfort level.</p>
-      <div class="quals">
-        <div class="qual"><i class="fas fa-check-circle"></i><span>BDS — KVG Medical College, Sullia (1999)</span></div>
-        <div class="qual"><i class="fas fa-check-circle"></i><span>27 years overall experience (25 years as specialist)</span></div>
-        <div class="qual"><i class="fas fa-check-circle"></i><span>Cosmetic/Aesthetic Dentist · Restorative Dentist · Dental Surgeon</span></div>
-        <div class="qual"><i class="fas fa-check-circle"></i><span>Medical Registration Verified</span></div>
-        <div class="qual"><i class="fas fa-check-circle"></i><span>Special interest: Scaling/Polishing, Ceramic Veneers/Crowns, Pulpectomy, Bone Grafting for Dental Implants, Zirconia Crowns</span></div>
+<!-- ─── ABOUT / TRUST ─── -->
+<section id="about" class="relative py-24 md:py-32 px-5 md:px-6 overflow-hidden">
+  <div class="absolute -top-24 -left-24 w-96 h-96 orange-glow pointer-events-none"></div>
+  <div class="relative max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div class="relative reveal">
+      <div class="rounded-3xl overflow-hidden shadow-2xl group">
+        <img src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="The Dental Office Reception" class="w-full h-[480px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105">
       </div>
-      <div class="doctor-quote">
-        <p>"Patient well-being and comfort are at the heart of every decision we make. No judgements, no unnecessary treatment — just honest, quality dental care."</p>
-        <cite>— Dr. Prathap M S Nair, The Dental Office, Pumpwell</cite>
+      <div class="absolute -bottom-10 -right-4 md:right-10 glass-card p-7 rounded-2xl">
+        <div class="flex flex-col">
+          <span class="font-display text-5xl md:text-6xl text-accent font-bold leading-none">27<span class="text-3xl">+</span></span>
+          <span class="label-caps text-muted mt-2">Years of Practice</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 reveal">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">About Our Practice</span>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold leading-tight">A Practice You Can Trust, in the Heart of Mangaluru</h2>
+      <div class="space-y-5">
+        <p class="text-lg text-body leading-relaxed">The Dental Office is a trusted, established, and affordable dental practice in Pumpwell, Mangaluru — serving patients of all ages from across the city and beyond. Led by Dr. Prathap M S Nair (BDS, 27 years experience), our clinic is built around a comfortable, welcoming environment, particularly for those who experience dental anxiety.</p>
+        <p class="text-base text-body/90 leading-relaxed">We offer same-day emergency appointments where possible and are committed to delivering high-quality, transparent dental care using the latest techniques and modern technology — without the jargon or unnecessary treatment.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+        <div class="glass-card p-6 rounded-2xl flex gap-4 items-start border-l-4 border-accent hover:shadow-lg transition-shadow">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent flex-shrink-0"><span class="material-symbols-outlined icon-fill">favorite</span></div>
+          <div><h3 class="font-bold text-ink mb-1 font-body">Compassionate Care</h3><p class="text-sm text-body">Gentle approach for anxious patients</p></div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl flex gap-4 items-start border-l-4 border-accent hover:shadow-lg transition-shadow">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent flex-shrink-0"><span class="material-symbols-outlined icon-fill">precision_manufacturing</span></div>
+          <div><h3 class="font-bold text-ink mb-1 font-body">Modern Technology</h3><p class="text-sm text-body">Latest equipment & techniques</p></div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl flex gap-4 items-start border-l-4 border-accent hover:shadow-lg transition-shadow">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent flex-shrink-0"><span class="material-symbols-outlined icon-fill">groups</span></div>
+          <div><h3 class="font-bold text-ink mb-1 font-body">All Ages Welcome</h3><p class="text-sm text-body">Paediatric to senior care</p></div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl flex gap-4 items-start border-l-4 border-accent hover:shadow-lg transition-shadow">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent flex-shrink-0"><span class="material-symbols-outlined icon-fill">bolt</span></div>
+          <div><h3 class="font-bold text-ink mb-1 font-body">Emergency Slots</h3><p class="text-sm text-body">Same-day bookings available</p></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE -->
-<section class="testimonials reveal" id="why-us">
-  <div class="testi-header" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-    <div>
-      <div class="section-tag" style="justify-content:center">Why Choose The Dental Office</div>
-      <h2 class="section-h2">Care You Can Verify</h2>
-      <p class="section-sub" style="margin:0 auto">A practice built on qualifications, experience, and the technology to back it up — not promises.</p>
-    </div>
-  </div>
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
-    <div class="testi-card" style="text-align:left">
-      <div style="width:48px;height:48px;border-radius:10px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px"><i class="fas fa-user-md"></i></div>
-      <div class="testi-author" style="font-size:18px">Verified Registration</div>
-      <p class="testi-text">Dr. Prathap M S Nair holds verified medical registration as a practising dental surgeon — qualifications you can independently confirm.</p>
-    </div>
-    <div class="testi-card" style="text-align:left">
-      <div style="width:48px;height:48px;border-radius:10px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px"><i class="fas fa-graduation-cap"></i></div>
-      <div class="testi-author" style="font-size:18px">BDS Qualified</div>
-      <p class="testi-text">BDS from KVG Medical College, Sullia (1999) — followed by 25 years of focused specialist practice in cosmetic, restorative and surgical dentistry.</p>
-    </div>
-    <div class="testi-card" style="text-align:left">
-      <div style="width:48px;height:48px;border-radius:10px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px"><i class="fas fa-microscope"></i></div>
-      <div class="testi-author" style="font-size:18px">Microscope-Assisted RCT</div>
-      <p class="testi-text">Single-sitting and microscope-assisted root canal treatment, plus laser dentistry — modern equipment used routinely, not as an upsell.</p>
-    </div>
-    <div class="testi-card" style="text-align:left">
-      <div style="width:48px;height:48px;border-radius:10px;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px"><i class="fas fa-wheelchair"></i></div>
-      <div class="testi-author" style="font-size:18px">Wheelchair Accessible</div>
-      <p class="testi-text">Located on the 2nd floor of Creek Galaxy with wheelchair access, opp. Indiana Hospital Road, Pumpwell — easy to reach from across Mangaluru.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials reveal" id="testimonials" style="background:var(--primary)">
-  <div class="testi-header" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-    <div>
-      <div class="section-tag" style="justify-content:center">Patient Reviews</div>
-      <h2 class="section-h2">What Our Patients Say</h2>
-      <p class="section-sub" style="margin:0 auto">Verified Google reviews from patients of The Dental Office, Pumpwell.</p>
-    </div>
-  </div>
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
-    <div class="testi-card">
-      <span class="testi-q">&#8220;</span>
-      <div class="testi-author">Dhruvika Khanna</div>
-      <p class="testi-text">Had a really good experience at The Dental Office, Mangalore! Went for a filling — it was quick, painless, and done really well. The clinic is clean and the staff are super friendly. Definitely recommend!</p>
-      <p class="testi-source"><i class="fab fa-google" style="color:#4285F4;margin-right:6px"></i>Google Review</p>
-      <div class="testi-stars">★★★★★</div>
-    </div>
-    <div class="testi-card">
-      <span class="testi-q">&#8220;</span>
-      <div class="testi-author">Deepika Bhat</div>
-      <p class="testi-text">I went to many dentists but didn't get the right treatment. Even when other doctors told me the tooth couldn't be saved, Dr. Prathap managed to save it. I really recommend him for any kind of root canal, re-root canal, or dental filling. He's the best at what he does and makes you feel comfortable throughout the treatment.</p>
-      <p class="testi-source"><i class="fab fa-google" style="color:#4285F4;margin-right:6px"></i>Google Local Guide</p>
-      <div class="testi-stars">★★★★★</div>
-    </div>
-    <div class="testi-card">
-      <span class="testi-q">&#8220;</span>
-      <div class="testi-author">Shahanas Salahudeen</div>
-      <p class="testi-text">From the moment I walked in, I was impressed by the excellent infrastructure — clean, modern, and welcoming. Dr. Prathap and Dr. Sruthi were true professionals. They took the time to explain everything and answer all my questions. The clinic uses the latest technology and the entire experience was painless and efficient. Five stars all the way!</p>
-      <p class="testi-source"><i class="fab fa-google" style="color:#4285F4;margin-right:6px"></i>Google Local Guide</p>
-      <div class="testi-stars">★★★★★</div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq reveal" id="faq">
-  <div class="faq-inner">
-    <div class="faq-header">
-      <div class="section-tag">Common Questions</div>
-      <h2 class="section-h2">Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Where does Dr. Prathap M S Nair practice? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Dr. Prathap M S Nair practices at The Dental Office — Pumpwell, located at 2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002.</p></div>
+<!-- ─── TREATMENTS ─── -->
+<section id="treatments" class="relative bg-surface-alt py-24 md:py-32 px-5 md:px-6">
+  <div class="max-w-container mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Cosmetic Dental Services</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">How can I take Dr. Prathap M S Nair's appointment? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>You can book an appointment directly through this website using the form below, or reach out via phone / WhatsApp at +91 78920 29550. Online booking through Practo is also available for in-clinic visits with the doctor.</p></div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold mb-4">Treatments We Offer</h2>
+      <p class="text-lg text-body max-w-2xl mx-auto">From whitening and veneers to implants and microscope-assisted root canals — modern, evidence-based dentistry tailored to your comfort.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">dentistry</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Teeth Whitening</h3>
+        <p class="text-sm text-body leading-relaxed">In-office bleaching and laser whitening — safe, dentist-administered, noticeably brighter results.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">Why do patients visit Dr. Prathap M S Nair? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Patients frequently visit Dr. Prathap for Scaling / Polishing, Ceramic Veneers / Crowns, Pulpectomy, Bone Grafting for Dental Implants, Zirconia Crowns and a wide range of cosmetic and restorative procedures.</p></div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">diamond</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Veneers & Crowns</h3>
+        <p class="text-sm text-body leading-relaxed">Custom porcelain veneers, zirconia and ceramic crowns — to restore shape, colour and strength.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What is Dr. Prathap M S Nair's education qualification? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Dr. Prathap M S Nair holds a BDS (Bachelor of Dental Surgery), completed from KVG Medical College, Sullia, in 1999. His medical registration is verified.</p></div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">sentiment_very_satisfied</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Clear Aligners</h3>
+        <p class="text-sm text-body leading-relaxed">Invisible aligners and clear braces — a discreet alternative to traditional metal orthodontics.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What does Dr. Prathap M S Nair specialise in? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Dr. Prathap M S Nair specialises as a Cosmetic/Aesthetic Dentist, Restorative Dentist, and Dental Surgeon, with 27 years of overall experience (25 years as a specialist).</p></div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">cleaning_services</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Scaling & Polishing</h3>
+        <p class="text-sm text-body leading-relaxed">Professional cleaning to remove tartar and plaque — keeping teeth and gums healthy.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What are the clinic's opening hours? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>The Dental Office is open Monday to Saturday from 3:00 PM to 7:30 PM. The clinic is closed on Sundays.</p></div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">water_drop</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Composite Fillings</h3>
+        <p class="text-sm text-body leading-relaxed">Mercury-free, tooth-coloured fillings that blend naturally with your teeth — seamless finish.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">Is the clinic wheelchair accessible? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Yes, our clinic is wheelchair accessible. Please let us know in advance if you need any specific assistance and we'll be happy to help.</p></div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">auto_awesome</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Smile Designing</h3>
+        <p class="text-sm text-body leading-relaxed">Comprehensive cosmetic plan combining veneers, whitening and reshaping to refine your smile.</p>
+      </div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">build</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Dental Implants</h3>
+        <p class="text-sm text-body leading-relaxed">Implant fixing, surgery and bone grafting — long-lasting replacements that look and feel natural.</p>
+      </div>
+      <div class="glass-card p-7 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">biotech</span></div>
+        <h3 class="font-display text-2xl text-ink font-semibold mb-2">Root Canal (RCT)</h3>
+        <p class="text-sm text-body leading-relaxed">Single-sitting RCT and microscope-assisted root canal treatment for precise, comfortable care.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact reveal" id="contact">
-  <div class="contact-inner">
-    <div class="contact-info">
-      <div class="section-tag">Get In Touch</div>
-      <h2 class="section-h2">Book Your Appointment</h2>
-      <p class="section-sub">Step into a space built around your dental health. Reach out via phone or WhatsApp — we respond within minutes.</p>
-      <div style="margin-top:30px">
-        <div class="c-detail"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Location</strong><span>2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002</span></div></div>
-        <div class="c-detail"><div class="c-icon"><i class="fas fa-phone"></i></div><div><strong>Phone / WhatsApp</strong><span><a href="tel:917892029550" style="color:var(--text-soft)">+91 78920 29550</a></span></div></div>
-        <div class="c-detail"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span>info@thedentaloffice.in</span></div></div>
+<!-- ─── SERVICES ─── -->
+<section id="services" class="relative py-24 md:py-32 px-5 md:px-6 overflow-hidden">
+  <div class="absolute top-1/3 -right-32 w-96 h-96 orange-glow pointer-events-none"></div>
+  <div class="relative max-w-container mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Restorative Services</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
       </div>
-      <div class="hours-grid">
-        <div class="hours-head"><i class="fas fa-clock" style="margin-right:8px"></i>Opening Hours</div>
-        <div class="hours-row"><span>Monday – Saturday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-      </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold mb-4">Putting Tooth Preservation First</h2>
+      <p class="text-lg text-body max-w-2xl mx-auto">From routine fillings to complex restorations — we keep your natural teeth healthy and strong for as long as possible.</p>
     </div>
-    <div class="booking-box">
-      <h3>Request an Appointment</h3>
-      <div class="form-row">
-        <div class="fg"><label>First Name</label><input type="text" id="fname" placeholder="Your first name" required></div>
-        <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
-      </div>
-      <div class="fg">
-        <label>Treatment Required</label>
-        <select id="treatment">
-          <option value="">Select a treatment...</option>
-          <option>Check-Up &amp; X-Ray</option>
-          <option>Teeth Whitening</option>
-          <option>Invisalign / Braces</option>
-          <option>Veneers</option>
-          <option>Composite Bonding</option>
-          <option>Dental Implants</option>
-          <option>White Fillings</option>
-          <option>Root Canal</option>
-          <option>Crown / Bridge</option>
-          <option>Dentures</option>
-          <option>Gum Treatment</option>
-          <option>Emergency Appointment</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="fg"><label>Message (optional)</label><textarea id="message" placeholder="Any additional details or preferred appointment time..."></textarea></div>
-      <button class="btn-wa" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i>Send via WhatsApp</button>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <!-- service cards generated below -->
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">healing</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Fillings</h4><p class="text-xs text-body leading-snug">Decay treatment & cavity restoration</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">biotech</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Root Canal</h4><p class="text-xs text-body leading-snug">Pain-relieving endodontic care</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">crown</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Crowns</h4><p class="text-xs text-body leading-snug">Strength & shape restoration</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">link</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Bridges</h4><p class="text-xs text-body leading-snug">Replace missing teeth seamlessly</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">sentiment_satisfied</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Dentures</h4><p class="text-xs text-body leading-snug">Custom-fit prosthetics</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">shield</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Gum Treatment</h4><p class="text-xs text-body leading-snug">Periodontal care</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">cleaning_services</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Scale & Polish</h4><p class="text-xs text-body leading-snug">Professional cleaning</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">stethoscope</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Check-Up & X-Ray</h4><p class="text-xs text-body leading-snug">Digital diagnostics</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">child_care</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Paediatric</h4><p class="text-xs text-body leading-snug">Gentle, child-friendly care</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">emergency</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Emergency Care</h4><p class="text-xs text-body leading-snug">Same-day appointments</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">straighten</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Aligners</h4><p class="text-xs text-body leading-snug">Invisible braces</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">build</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Implants</h4><p class="text-xs text-body leading-snug">Surgical & immediate-load</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">diamond</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Zirconia Crowns</h4><p class="text-xs text-body leading-snug">Premium ceramic</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">auto_awesome</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Smile Design</h4><p class="text-xs text-body leading-snug">Custom makeovers</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">surgical</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Wisdom Tooth</h4><p class="text-xs text-body leading-snug">Surgical extraction</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">light_mode</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Laser Dentistry</h4><p class="text-xs text-body leading-snug">Cosmetic & gum laser</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">shield_moon</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Mouth Guards</h4><p class="text-xs text-body leading-snug">Night & sports guards</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">visibility</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">RCT Microscope</h4><p class="text-xs text-body leading-snug">Microscope-assisted</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">smartphone</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Online Booking</h4><p class="text-xs text-body leading-snug">Quick & contact-free</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-divider/30 text-center hover:border-accent/40 hover:shadow-lg transition-all"><div class="w-12 h-12 mx-auto mb-3 bg-accent/10 text-accent rounded-xl flex items-center justify-center"><span class="material-symbols-outlined icon-fill">accessible</span></div><h4 class="font-display text-base text-ink font-semibold mb-1">Wheelchair Access</h4><p class="text-xs text-body leading-snug">Fully accessible clinic</p></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-main">
-    <div class="f-brand">
-      <div class="f-logo">
-        <div class="f-logo-mark"><i class="fas fa-tooth"></i></div>
-        <div class="f-logo-text">The Dental Office<small>Mangaluru</small></div>
+<!-- ─── DOCTOR ─── -->
+<section id="doctor" class="relative bg-surface-alt py-24 md:py-32 px-5 md:px-6 overflow-hidden">
+  <div class="max-w-container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 reveal">
+        <div class="bg-ink text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+          <div class="absolute -top-32 -right-32 w-72 h-72 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+          <div class="relative">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="material-symbols-outlined text-accent">verified</span>
+              <span class="label-caps text-accent">Meet Your Dentist</span>
+            </div>
+            <h2 class="font-display text-4xl md:text-5xl text-white font-semibold mb-3">Dr. Prathap M S Nair</h2>
+            <p class="label-caps text-white/60 mb-6">BDS · Cosmetic · Restorative · Surgical</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs font-semibold">27 yrs experience</span>
+              <span class="bg-accent/15 border border-accent/40 text-accent px-3 py-1 rounded-full text-xs font-semibold">25 yrs specialist</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs font-semibold">KVG Sullia '99</span>
+            </div>
+            <div class="border-l-4 border-accent pl-5 italic text-white/80 leading-relaxed">
+              "Patient well-being and comfort are at the heart of every decision we make. No judgements, no unnecessary treatment — just honest, quality dental care."
+              <div class="not-italic label-caps text-white/50 mt-3">— Dr. Prathap M S Nair</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <p>Family-friendly, established, and affordable dental practice at Creek Galaxy, Pumpwell, Mangaluru. We offer same-day emergency appointments and are committed to creating a comfortable, judgement-free environment for all patients.</p>
-      <div class="f-socials">
-        <a href="https://wa.me/917892029550" class="f-soc"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="f-col">
-      <h5>Useful Links</h5>
-      <div class="f-links">
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#treatments">Treatments</a>
-        <a href="#services">Services</a>
-        <a href="#doctor">Our Doctor</a>
-        <a href="#contact">Appointments</a>
-        <a href="#contact">Fees</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="f-col">
-      <h5>Opening Times</h5>
-      <div class="f-hours">
-        <div class="f-hour"><span>Monday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Tuesday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Wednesday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Thursday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Friday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Saturday</span><span>3:00 PM – 7:30 PM</span></div>
-        <div class="f-hour"><span>Sunday</span><span>Closed</span></div>
-      </div>
-    </div>
-    <div class="f-col">
-      <h5>Gallery</h5>
-      <div class="f-ig">
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="Treatment Room"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM.jpeg" alt="Treatment Room View 2"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM%20%281%29.jpeg" alt="Treatment Room View 3"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="Dental Chairs"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="Reception"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-26%20at%2011.39.40%20PM%20%283%29.jpeg" alt="Clinic Entrance"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.37%20AM.jpeg" alt="Dental Equipment"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="Treatment Room"></div>
-        <div class="f-ig-item"><img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="Dental Chairs"></div>
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-[2px] bg-accent"></div>
+          <span class="label-caps text-accent">Qualifications</span>
+        </div>
+        <h3 class="font-display text-3xl md:text-4xl text-ink font-semibold mb-6">A Practice Built on Verifiable Credentials.</h3>
+        <p class="text-lg text-body mb-8 leading-relaxed">Dr. Prathap M S Nair completed his BDS from KVG Medical College, Sullia, in 1999 and his medical registration is verified. With a warm, patient-centred approach and a commitment to evidence-based dentistry, every visit is tailored to your unique needs and comfort level.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent icon-fill mt-0.5">check_circle</span><span class="text-body">BDS — KVG Medical College, Sullia (1999)</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent icon-fill mt-0.5">check_circle</span><span class="text-body">27 years overall experience (25 as specialist)</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent icon-fill mt-0.5">check_circle</span><span class="text-body">Cosmetic / Aesthetic · Restorative · Dental Surgeon</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent icon-fill mt-0.5">check_circle</span><span class="text-body">Medical Registration Verified</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent icon-fill mt-0.5">check_circle</span><span class="text-body">Special interests: Veneers, Pulpectomy, Bone Grafting, Zirconia Crowns</span></li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-3 bg-accent hover:bg-accent-dark text-white px-7 py-3.5 rounded-full font-bold transition-all hover:scale-[0.98]"><span class="material-symbols-outlined">event</span>Book a Consultation</a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-inner">
-      <p>© 2026 The Dental Office, Mangaluru. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Powered by LuMe Studios</a>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section class="relative py-24 md:py-32 px-5 md:px-6 overflow-hidden">
+  <div class="max-w-container mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Why Choose The Dental Office</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
       </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold mb-4">Care You Can Verify</h2>
+      <p class="text-lg text-body max-w-2xl mx-auto">A practice built on qualifications, experience, and the technology to back it up — not promises.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-card p-7 rounded-2xl border-l-4 border-accent reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">verified_user</span></div>
+        <h3 class="font-display text-xl text-ink font-semibold mb-2">Verified Registration</h3>
+        <p class="text-sm text-body leading-relaxed">Dr. Prathap M S Nair holds verified medical registration as a practising dental surgeon — qualifications you can independently confirm.</p>
+      </div>
+      <div class="glass-card p-7 rounded-2xl border-l-4 border-accent reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">school</span></div>
+        <h3 class="font-display text-xl text-ink font-semibold mb-2">BDS Qualified</h3>
+        <p class="text-sm text-body leading-relaxed">BDS from KVG Medical College, Sullia (1999) — followed by 25 years of focused specialist practice in cosmetic, restorative and surgical dentistry.</p>
+      </div>
+      <div class="glass-card p-7 rounded-2xl border-l-4 border-accent reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">biotech</span></div>
+        <h3 class="font-display text-xl text-ink font-semibold mb-2">Microscope-Assisted RCT</h3>
+        <p class="text-sm text-body leading-relaxed">Single-sitting and microscope-assisted root canal treatment, plus laser dentistry — modern equipment used routinely, not as an upsell.</p>
+      </div>
+      <div class="glass-card p-7 rounded-2xl border-l-4 border-accent reveal">
+        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined icon-fill text-[26px]">accessible</span></div>
+        <h3 class="font-display text-xl text-ink font-semibold mb-2">Wheelchair Accessible</h3>
+        <p class="text-sm text-body leading-relaxed">Located on the 2nd floor of Creek Galaxy with wheelchair access, opp. Indiana Hospital Road, Pumpwell — easy to reach from across Mangaluru.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials" class="relative bg-surface-alt py-24 md:py-32 px-5 md:px-6">
+  <div class="max-w-container mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Patient Reviews</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold mb-4">What Our Patients Say</h2>
+      <p class="text-lg text-body max-w-2xl mx-auto">Verified Google reviews from patients of The Dental Office, Pumpwell.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-card p-8 rounded-2xl flex flex-col reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#4285F4] text-xl">stars</span>
+            <span class="label-caps text-muted">Google Review</span>
+          </div>
+          <div class="text-amber-500 tracking-widest">★★★★★</div>
+        </div>
+        <p class="text-body italic leading-relaxed flex-1">"Had a really good experience at The Dental Office, Mangalore! Went for a filling — it was quick, painless, and done really well. The clinic is clean and the staff are super friendly. Definitely recommend!"</p>
+        <div class="mt-6 pt-6 border-t border-divider/40">
+          <div class="font-display text-lg text-ink font-semibold">Dhruvika Khanna</div>
+          <div class="text-xs text-muted">Verified patient</div>
+        </div>
+      </div>
+      <div class="glass-card p-8 rounded-2xl flex flex-col reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#4285F4] text-xl">stars</span>
+            <span class="label-caps text-muted">Google Local Guide</span>
+          </div>
+          <div class="text-amber-500 tracking-widest">★★★★★</div>
+        </div>
+        <p class="text-body italic leading-relaxed flex-1">"I went to many dentists but didn't get the right treatment. Even when other doctors told me the tooth couldn't be saved, Dr. Prathap managed to save it. I really recommend him for any kind of root canal, re-root canal, or dental filling."</p>
+        <div class="mt-6 pt-6 border-t border-divider/40">
+          <div class="font-display text-lg text-ink font-semibold">Deepika Bhat</div>
+          <div class="text-xs text-muted">Local Guide</div>
+        </div>
+      </div>
+      <div class="glass-card p-8 rounded-2xl flex flex-col reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#4285F4] text-xl">stars</span>
+            <span class="label-caps text-muted">Google Local Guide</span>
+          </div>
+          <div class="text-amber-500 tracking-widest">★★★★★</div>
+        </div>
+        <p class="text-body italic leading-relaxed flex-1">"From the moment I walked in, I was impressed by the excellent infrastructure — clean, modern, and welcoming. Dr. Prathap and Dr. Sruthi were true professionals. The clinic uses the latest technology and the entire experience was painless and efficient."</p>
+        <div class="mt-6 pt-6 border-t border-divider/40">
+          <div class="font-display text-lg text-ink font-semibold">Shahanas Salahudeen</div>
+          <div class="text-xs text-muted">Local Guide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq" class="relative py-24 md:py-32 px-5 md:px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Common Questions</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>Where does Dr. Prathap M S Nair practice?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">Dr. Prathap M S Nair practices at The Dental Office — Pumpwell, located at 2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002.</div>
+      </details>
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>How can I book an appointment?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">You can book directly through the form on this site, or reach out via phone / WhatsApp at +91 78920 29550. Online booking through Practo is also available for in-clinic visits.</div>
+      </details>
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>What does Dr. Prathap specialise in?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">Dr. Prathap specialises as a Cosmetic / Aesthetic Dentist, Restorative Dentist, and Dental Surgeon, with 27 years of overall experience (25 as a specialist). Special interests include Scaling/Polishing, Ceramic Veneers/Crowns, Pulpectomy, Bone Grafting for Implants, and Zirconia Crowns.</div>
+      </details>
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>What is Dr. Prathap's qualification?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">Dr. Prathap M S Nair holds a BDS (Bachelor of Dental Surgery), completed from KVG Medical College, Sullia, in 1999. His medical registration is verified.</div>
+      </details>
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>What are the clinic's opening hours?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">The Dental Office is open Monday to Saturday from 3:00 PM to 7:30 PM. The clinic is closed on Sundays.</div>
+      </details>
+      <details class="glass-card rounded-2xl group reveal">
+        <summary class="flex items-center justify-between p-6 font-semibold text-ink"><span>Is the clinic wheelchair accessible?</span><span class="faq-arrow material-symbols-outlined text-accent transition-transform">expand_more</span></summary>
+        <div class="px-6 pb-6 text-body">Yes — our clinic is wheelchair accessible. Please let us know in advance if you need any specific assistance and we'll be happy to help.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT / BOOKING ─── -->
+<section id="contact" class="relative bg-surface-alt py-24 md:py-32 px-5 md:px-6 overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 orange-glow pointer-events-none"></div>
+  <div class="relative max-w-container mx-auto">
+    <div class="text-center mb-14 reveal">
+      <div class="flex items-center gap-4 justify-center mb-5">
+        <div class="w-12 h-[2px] bg-accent"></div>
+        <span class="label-caps text-accent">Get In Touch</span>
+        <div class="w-12 h-[2px] bg-accent"></div>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-semibold mb-4">Book Your Appointment</h2>
+      <p class="text-lg text-body max-w-2xl mx-auto">Step into a space built around your dental health. Reach us by phone, WhatsApp, or the form below — we respond within minutes.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Left: Visit + Timings -->
+      <div class="lg:col-span-5 flex flex-col gap-6 reveal">
+        <div class="bg-accent/5 border border-accent/20 p-8 rounded-3xl">
+          <h3 class="font-display text-2xl text-ink font-semibold mb-3">Visit Our Practice</h3>
+          <p class="text-body mb-6">Located conveniently in Creek Galaxy, Pumpwell — easily accessible for all residents of Mangaluru.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3"><span class="material-symbols-outlined text-accent">location_on</span><span class="text-body text-sm">2nd Floor, Creek Galaxy, opp. Indiana Hospital Road,<br>Pumpwell, Mangaluru, Karnataka 575002</span></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">call</span><a href="tel:917892029550" class="text-body text-sm font-semibold hover:text-accent transition-colors">+91 78920 29550</a></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">mail</span><a href="mailto:info@thedentaloffice.in" class="text-body text-sm font-semibold hover:text-accent transition-colors">info@thedentaloffice.in</a></div>
+          </div>
+        </div>
+        <div class="bg-ink text-white p-8 rounded-3xl relative overflow-hidden">
+          <div class="absolute -bottom-20 -right-20 w-56 h-56 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+          <div class="relative">
+            <div class="flex justify-between items-center mb-6">
+              <span class="label-caps text-accent">Timings</span>
+              <span class="material-symbols-outlined text-accent">schedule</span>
+            </div>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-4 border-b border-white/10"><span class="font-bold">Monday — Saturday</span><span class="text-accent font-display text-lg">3:00 PM – 7:30 PM</span></div>
+              <div class="flex justify-between items-center"><span class="opacity-70">Sunday</span><span class="bg-error/20 text-error font-bold px-3 py-1 rounded-full text-xs label-caps">Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Booking Form -->
+      <div class="lg:col-span-7 reveal">
+        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-divider/30">
+          <h3 class="font-display text-2xl text-ink font-semibold mb-6">Request an Appointment</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="label-caps text-muted block mb-2">First Name</label>
+              <input id="fname" type="text" placeholder="Your first name" required class="w-full bg-surface-alt border border-divider/50 px-4 py-3 rounded-xl text-sm focus:border-accent focus:bg-white outline-none transition-colors">
+            </div>
+            <div>
+              <label class="label-caps text-muted block mb-2">Last Name</label>
+              <input id="lname" type="text" placeholder="Your last name" class="w-full bg-surface-alt border border-divider/50 px-4 py-3 rounded-xl text-sm focus:border-accent focus:bg-white outline-none transition-colors">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="label-caps text-muted block mb-2">Treatment Required</label>
+            <select id="treatment" class="w-full bg-surface-alt border border-divider/50 px-4 py-3 rounded-xl text-sm focus:border-accent focus:bg-white outline-none transition-colors">
+              <option value="">Select a treatment...</option>
+              <option>Check-Up & X-Ray</option>
+              <option>Teeth Whitening</option>
+              <option>Invisalign / Braces</option>
+              <option>Veneers</option>
+              <option>Composite Bonding</option>
+              <option>Dental Implants</option>
+              <option>White Fillings</option>
+              <option>Root Canal</option>
+              <option>Crown / Bridge</option>
+              <option>Dentures</option>
+              <option>Gum Treatment</option>
+              <option>Emergency Appointment</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="label-caps text-muted block mb-2">Message (optional)</label>
+            <textarea id="message" rows="4" placeholder="Any additional details or preferred appointment time..." class="w-full bg-surface-alt border border-divider/50 px-4 py-3 rounded-xl text-sm focus:border-accent focus:bg-white outline-none transition-colors resize-none"></textarea>
+          </div>
+          <button onclick="sendWhatsApp()" class="w-full bg-accent hover:bg-accent-dark text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-all hover:scale-[0.99] shadow-lg shadow-accent/30">
+            <span class="material-symbols-outlined">chat</span>Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="bg-white border-t border-divider/30">
+  <div class="max-w-container mx-auto px-5 md:px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-1 space-y-5">
+      <a href="#" class="flex items-center gap-3">
+        <div class="bg-accent p-2 rounded-lg text-white"><span class="material-symbols-outlined text-[20px] icon-fill">dentistry</span></div>
+        <span class="font-display text-lg font-bold text-ink leading-tight">The Dental Office<br><span class="font-body text-[10px] font-semibold tracking-[0.18em] text-muted uppercase">Mangaluru</span></span>
+      </a>
+      <p class="text-sm text-body leading-relaxed">Family-friendly, established, and affordable dental practice at Creek Galaxy, Pumpwell, Mangaluru. Same-day emergency appointments available.</p>
+      <div class="flex gap-3">
+        <a href="https://wa.me/917892029550" class="w-10 h-10 rounded-full border border-divider/50 hover:bg-accent hover:border-accent hover:text-white text-body flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></a>
+        <a href="tel:917892029550" class="w-10 h-10 rounded-full border border-divider/50 hover:bg-accent hover:border-accent hover:text-white text-body flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[20px]">call</span></a>
+      </div>
+    </div>
+    <div class="space-y-5">
+      <h5 class="label-caps text-ink">Useful Links</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#home" class="text-body hover:text-accent transition-colors">Home</a></li>
+        <li><a href="#about" class="text-body hover:text-accent transition-colors">About Us</a></li>
+        <li><a href="#treatments" class="text-body hover:text-accent transition-colors">Treatments</a></li>
+        <li><a href="#services" class="text-body hover:text-accent transition-colors">Services</a></li>
+        <li><a href="#doctor" class="text-body hover:text-accent transition-colors">Our Doctor</a></li>
+        <li><a href="#contact" class="text-body hover:text-accent transition-colors">Appointments</a></li>
+      </ul>
+    </div>
+    <div class="space-y-5">
+      <h5 class="label-caps text-ink">Opening Times</h5>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span class="text-muted">Monday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between"><span class="text-muted">Tuesday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between"><span class="text-muted">Wednesday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between"><span class="text-muted">Thursday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between"><span class="text-muted">Friday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between"><span class="text-muted">Saturday</span><span class="text-body">3:00 – 7:30 PM</span></li>
+        <li class="flex justify-between font-bold"><span class="text-error">Sunday</span><span class="text-error">Closed</span></li>
+      </ul>
+    </div>
+    <div class="space-y-5">
+      <h5 class="label-caps text-ink">Gallery</h5>
+      <div class="grid grid-cols-3 gap-2">
+        <img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg" alt="Treatment Room" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+        <img src="WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM.jpeg" alt="Treatment Room 2" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+        <img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM%20%281%29.jpeg" alt="Treatment Room 3" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+        <img src="WhatsApp%20Image%202026-04-27%20at%2012.24.42%20AM.jpeg" alt="Dental Chairs" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+        <img src="WhatsApp%20Image%202026-04-26%20at%2011.39.39%20PM.jpeg" alt="Reception" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+        <img src="WhatsApp%20Image%202026-04-26%20at%2011.39.40%20PM%20%283%29.jpeg" alt="Clinic Entrance" class="w-full aspect-square object-cover rounded-md hover:opacity-80 transition-opacity">
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-divider/30 px-5 md:px-6 py-6">
+    <div class="max-w-container mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-xs text-muted">© 2026 The Dental Office, Mangaluru. All rights reserved.</p>
+      <p class="text-xs text-muted">Powered by <a href="#" class="text-accent hover:underline font-semibold">LuMe Studios</a></p>
     </div>
   </div>
 </footer>
 
-<!-- MOBILE BAR -->
-<div class="mob-bar">
-  <a href="tel:917892029550"><i class="fas fa-phone"></i>Call Now</a>
-  <a href="https://wa.me/917892029550" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+<!-- ─── FLOATING APPOINTMENT WIDGET ─── -->
+<a href="#contact" class="hidden md:flex fixed bottom-8 right-8 bg-accent hover:bg-accent-dark text-white p-5 rounded-full shadow-2xl items-center gap-3 group z-40 transition-all hover:scale-105">
+  <span class="material-symbols-outlined text-[28px] icon-fill">event</span>
+  <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-bold whitespace-nowrap label-caps">Book Appointment</span>
+</a>
+
+<!-- ─── MOBILE BOTTOM BAR ─── -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-divider/30 flex shadow-xl">
+  <a href="tel:917892029550" class="flex-1 flex flex-col items-center py-3 text-ink">
+    <span class="material-symbols-outlined text-accent">call</span>
+    <span class="label-caps mt-1">Call</span>
+  </a>
+  <div class="w-px bg-divider/40"></div>
+  <a href="https://wa.me/917892029550" target="_blank" class="flex-1 flex flex-col items-center py-3 text-ink">
+    <span class="material-symbols-outlined text-accent">chat</span>
+    <span class="label-caps mt-1">WhatsApp</span>
+  </a>
+  <div class="w-px bg-divider/40"></div>
+  <a href="#contact" class="flex-1 flex flex-col items-center py-3 text-ink">
+    <span class="material-symbols-outlined text-accent">event</span>
+    <span class="label-caps mt-1">Book</span>
+  </a>
 </div>
 
 <script>
-/* ─── NAV SCROLL ─── */
+// nav scroll effect
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    nav.classList.add('bg-surface/85','backdrop-blur-xl','shadow-sm','border-b','border-divider/30');
+    nav.classList.remove('bg-surface/0');
+  } else {
+    nav.classList.remove('bg-surface/85','backdrop-blur-xl','shadow-sm','border-b','border-divider/30');
+    nav.classList.add('bg-surface/0');
+  }
+});
 
-/* ─── MOBILE MENU ─── */
-const toggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-document.addEventListener('click', e => { if (!toggle.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open'); });
+// mobile menu
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-/* ─── REVEAL ─── */
-const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+// reveal on scroll
+const ro = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('active'); ro.unobserve(e.target); }
+}), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-/* ─── COUNTER ─── */
-function animateCounter(el) {
-  const target = parseFloat(el.dataset.target);
-  const isDecimal = target % 1 !== 0;
-  const duration = 2000;
-  const start = performance.now();
-  const run = now => {
-    const p = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    const val = target * ease;
-    el.textContent = isDecimal ? val.toFixed(1) : Math.floor(val).toLocaleString();
-    if (p < 1) requestAnimationFrame(run);
-    else el.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
-  };
-  requestAnimationFrame(run);
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(animateCounter); statsObs.unobserve(e.target); } });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stats, .about').forEach(s => statsObs.observe(s));
-
-/* ─── CAROUSEL FACTORY ─── */
-function makeCarousel(opts) {
-  const { track, prevBtn, nextBtn, dotsEl, getVisible, gap } = opts;
-  const items = track.children;
-  let cur = 0;
-
-  function visible() { return getVisible(); }
-  function pages() { return Math.ceil(items.length / visible()); }
-
-  function buildDots() {
-    dotsEl.innerHTML = '';
-    for (let i = 0; i < pages(); i++) {
-      const d = document.createElement('div');
-      d.className = 'ctrl-dot' + (i === 0 ? ' on' : '');
-      d.addEventListener('click', () => go(i));
-      dotsEl.appendChild(d);
-    }
-  }
-
-  function go(page) {
-    cur = Math.max(0, Math.min(page, pages() - 1));
-    const itemW = track.parentElement.offsetWidth / visible();
-    track.style.transform = `translateX(-${cur * visible() * itemW}px)`;
-    dotsEl.querySelectorAll('.ctrl-dot').forEach((d, i) => d.classList.toggle('on', i === cur));
-  }
-
-  function init() {
-    const vis = visible();
-    const w = `calc((100% - ${gap * (vis - 1)}px) / ${vis})`;
-    Array.from(items).forEach(el => { el.style.flex = `0 0 ${w}`; el.style.maxWidth = w; });
-    cur = 0;
-    track.style.transform = 'translateX(0)';
-    track.style.gap = gap + 'px';
-    track.style.display = 'flex';
-    buildDots();
-  }
-
-  prevBtn.addEventListener('click', () => go(cur - 1));
-  nextBtn.addEventListener('click', () => go(cur + 1));
-  window.addEventListener('resize', init);
-  init();
-  return { go };
-}
-
-/* Treatments */
-makeCarousel({
-  track: document.getElementById('treatTrack'),
-  prevBtn: document.getElementById('treatPrev'),
-  nextBtn: document.getElementById('treatNext'),
-  dotsEl: document.getElementById('treatDots'),
-  getVisible: () => window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 4,
-  gap: 20
-});
-
-/* Services */
-makeCarousel({
-  track: document.getElementById('svcTrack'),
-  prevBtn: document.getElementById('svcPrev'),
-  nextBtn: document.getElementById('svcNext'),
-  dotsEl: document.getElementById('svcDots'),
-  getVisible: () => window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 5,
-  gap: 0
-});
-
-/* ─── FAQ ─── */
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.querySelector('.faq-q').addEventListener('click', () => {
-    item.classList.toggle('open');
-  });
-});
-
-/* ─── WHATSAPP ─── */
+// whatsapp form
 function sendWhatsApp() {
   const fname = document.getElementById('fname').value.trim();
   const lname = document.getElementById('lname').value.trim();
@@ -867,5 +701,6 @@ function sendWhatsApp() {
   window.open(`https://wa.me/917892029550?text=${text}`, '_blank');
 }
 </script>
+
 </body>
 </html>
