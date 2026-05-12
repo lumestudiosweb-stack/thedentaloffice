@@ -346,7 +346,20 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .treat-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text-white);line-height:1.2}
 .treat-card p{font-size:13px;color:var(--text-soft);line-height:1.65;font-weight:300}
 .carousel-controls{display:flex;align-items:center;gap:10px}
-.ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition)}
+.ctrl-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:transparent;color:var(--text-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;transition:var(--transition);flex-shrink:0}
+
+/* Hide native scrollbar on mobile-mode carousels (cosmetic only — scroll still works) */
+.treat-track,.services-track{-ms-overflow-style:none;scrollbar-width:none}
+.treat-track::-webkit-scrollbar,.services-track::-webkit-scrollbar{display:none;width:0;height:0}
+
+/* Mobile-only: bump arrow buttons + add right-edge fade hint */
+@media(max-width:768px){
+  .ctrl-btn{width:44px;height:44px;font-size:14px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);border-color:var(--border)}
+  .ctrl-btn:active{transform:scale(0.94)}
+  .treatments-carousel-wrap,.services-grid-wrap{position:relative;overflow:visible}
+  .treatments-carousel-wrap::after{content:'';position:absolute;top:0;right:0;bottom:0;width:36px;background:linear-gradient(to right,transparent,var(--primary));pointer-events:none;z-index:2}
+  .services-grid-wrap::after{content:'';position:absolute;top:0;right:0;bottom:0;width:36px;background:linear-gradient(to right,transparent,var(--primary-mid));pointer-events:none;z-index:2}
+}
 .ctrl-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--text-on-accent)}
 .ctrl-dots{display:flex;gap:7px}
 .ctrl-dot{width:8px;height:8px;border-radius:50%;background:var(--border-light);cursor:pointer;transition:background 0.2s}
@@ -1169,6 +1182,7 @@ function makeCarousel(opts) {
   const { track, prevBtn, nextBtn, dotsEl, getVisible, gap } = opts;
   const items = track.children;
   let cur = 0;
+  let mobileMode = false;
 
   function visible() { return getVisible(); }
   function pages() { return Math.ceil(items.length / visible()); }
@@ -1184,25 +1198,78 @@ function makeCarousel(opts) {
   }
 
   function go(page) {
+    if (mobileMode) {
+      const card = items[0];
+      if (!card) return;
+      const stride = card.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0);
+      cur = Math.max(0, Math.min(page, items.length - 1));
+      track.scrollTo({ left: cur * stride, behavior: 'smooth' });
+      return;
+    }
     cur = Math.max(0, Math.min(page, pages() - 1));
     const itemW = track.parentElement.offsetWidth / visible();
     track.style.transform = `translateX(-${cur * visible() * itemW}px)`;
     dotsEl.querySelectorAll('.ctrl-dot').forEach((d, i) => d.classList.toggle('on', i === cur));
   }
 
-  function init() {
-    const vis = visible();
-    const w = `calc((100% - ${gap * (vis - 1)}px) / ${vis})`;
-    Array.from(items).forEach(el => { el.style.flex = `0 0 ${w}`; el.style.maxWidth = w; });
-    cur = 0;
-    track.style.transform = 'translateX(0)';
-    track.style.gap = gap + 'px';
-    track.style.display = 'flex';
-    buildDots();
+  function scrollOne(dir) {
+    const card = items[0];
+    if (!card) return;
+    const stride = card.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0);
+    track.scrollBy({ left: dir * stride, behavior: 'smooth' });
   }
 
-  prevBtn.addEventListener('click', () => go(cur - 1));
-  nextBtn.addEventListener('click', () => go(cur + 1));
+  function init() {
+    const vis = visible();
+    mobileMode = vis <= 2;
+
+    // Clear all inline styles before re-applying
+    track.style.cssText = '';
+    Array.from(items).forEach(el => { el.style.cssText = ''; });
+
+    if (mobileMode) {
+      // Native horizontal scroll-snap (best UX on touch devices)
+      Object.assign(track.style, {
+        display: 'flex',
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        scrollSnapType: 'x mandatory',
+        scrollBehavior: 'smooth',
+        gap: '14px',
+        padding: '4px 5% 16px',
+        scrollPaddingLeft: '5%',
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'none'
+      });
+      const w = vis === 1 ? '84%' : '46%';
+      Array.from(items).forEach(el => {
+        el.style.flex = `0 0 ${w}`;
+        el.style.maxWidth = w;
+        el.style.scrollSnapAlign = 'start';
+      });
+      // Hide dots (too many for services) but keep arrow buttons usable
+      if (dotsEl) dotsEl.style.display = 'none';
+    } else {
+      // Desktop carousel (transform-based pagination)
+      const w = `calc((100% - ${gap * (vis - 1)}px) / ${vis})`;
+      Object.assign(track.style, {
+        display: 'flex',
+        transition: 'transform 0.45s cubic-bezier(0.4,0,0.2,1)',
+        transform: 'translateX(0)',
+        gap: gap + 'px'
+      });
+      Array.from(items).forEach(el => {
+        el.style.flex = `0 0 ${w}`;
+        el.style.maxWidth = w;
+      });
+      cur = 0;
+      if (dotsEl) dotsEl.style.display = '';
+      buildDots();
+    }
+  }
+
+  prevBtn.addEventListener('click', () => mobileMode ? scrollOne(-1) : go(cur - 1));
+  nextBtn.addEventListener('click', () => mobileMode ? scrollOne(1) : go(cur + 1));
   window.addEventListener('resize', init);
   init();
   return { go };
