@@ -436,9 +436,11 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .doctor-card .qual{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-soft);line-height:1.55}
 .doctor-card .qual i{color:var(--accent);font-size:13px;flex-shrink:0;margin-top:4px}
 .doctor-card .qual strong{color:var(--text-white);font-weight:600}
-.doctor-card .doctor-quote{margin-top:8px;padding:18px 20px;background:rgba(249,115,22,0.05);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
-.doctor-card .doctor-quote p{font-style:italic;font-size:13px;color:var(--text-soft);line-height:1.65;margin:0}
-.doctor-card .doctor-quote cite{font-size:11px;color:var(--text-muted);font-style:normal;display:block;margin-top:8px;font-weight:600}
+.doctor-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.doctor-tag{font-size:11px;font-weight:600;letter-spacing:0.02em;padding:6px 12px;border-radius:100px;background:rgba(249,115,22,0.10);color:var(--accent-dark);border:1px solid rgba(249,115,22,0.22)}
+.doctor-cta{margin-top:14px;display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:12px 24px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:var(--transition);align-self:flex-start;box-shadow:0 8px 20px rgba(249,115,22,0.28)}
+.doctor-cta:hover{background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 10px 26px rgba(249,115,22,0.38)}
+.doctor-cta i{font-size:13px}
 @media(max-width:900px){.doctors-grid{grid-template-columns:1fr;gap:20px}.doctor-card{padding:30px}}
 /* ─── GALLERY ─── */
 .gallery{padding:120px 5%;background:var(--primary-mid);position:relative;overflow:hidden}
@@ -822,10 +824,15 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
         <div class="qual"><i class="fas fa-check-circle"></i><span>Microscope-assisted RCT, Ceramic Veneers, Zirconia Crowns, Smile Design</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>Medical Registration Verified</span></div>
       </div>
-      <div class="doctor-quote">
-        <p>"Patient well-being and comfort are at the heart of every decision we make. No judgements, no unnecessary treatment — just honest, quality dental care."</p>
-        <cite>— Dr. M S Prathap, M.D.S.</cite>
+      <div class="doctor-tags">
+        <span class="doctor-tag">Root Canal</span>
+        <span class="doctor-tag">Microscope RCT</span>
+        <span class="doctor-tag">Veneers</span>
+        <span class="doctor-tag">Zirconia Crowns</span>
+        <span class="doctor-tag">Smile Design</span>
+        <span class="doctor-tag">Aesthetic Dentistry</span>
       </div>
+      <a href="#contact" class="doctor-cta"><i class="fas fa-calendar-check"></i>Book with Dr. Prathap</a>
     </article>
     <article class="doctor-card reveal" itemscope itemtype="https://schema.org/Person">
       <div class="doctor-card-head">
@@ -846,10 +853,15 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
         <div class="qual"><i class="fas fa-check-circle"></i><span>Bone grafting &amp; soft-tissue procedures</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>Medical Registration Verified</span></div>
       </div>
-      <div class="doctor-quote">
-        <p>"Healthy gums are the foundation of every lasting smile. We treat the foundation first — and only then build on it."</p>
-        <cite>— Dr. Shruthy Prathap, M.D.S.</cite>
+      <div class="doctor-tags">
+        <span class="doctor-tag">Gum Treatment</span>
+        <span class="doctor-tag">Dental Implants</span>
+        <span class="doctor-tag">Bone Grafting</span>
+        <span class="doctor-tag">Full-Arch Implants</span>
+        <span class="doctor-tag">Periodontal Surgery</span>
+        <span class="doctor-tag">Soft-Tissue Grafting</span>
       </div>
+      <a href="#contact" class="doctor-cta"><i class="fas fa-calendar-check"></i>Book with Dr. Shruthy</a>
     </article>
   </div>
 </section>
