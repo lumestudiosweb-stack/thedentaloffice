@@ -58,9 +58,9 @@
   "@id": "https://lumestudiosweb-stack.github.io/thedentaloffice/#dentist",
   "name": "The Dental Office",
   "alternateName": ["The Dental Office Mangaluru", "The Dental Office Pumpwell, SDM College of Dental Sciences Dharwad, Yenepoya Dental College Mangaluru"],
-  "description": "Family-friendly, established dental practice in Pumpwell, Mangaluru. Co-founded by Dr. M S Prathap, M.D.S. (Endodontist & Aesthetic Dentist, 27 years) and Dr. Shruthy Prathap, M.D.S. (Periodontist & Implantologist). Specialists in root canal, implants, gum treatment, cosmetic and restorative dentistry.",
+  "description": "Family-friendly, established dental practice in Pumpwell, Mangaluru. Co-founded by Dr. M S Prathap, M.D.S. (Endodontist & Aesthetic Dentist, 27 years; Professor & former HOD, Conservative Dentistry & Endodontics, Yenepoya Dental College) and Dr. Shruthy Prathap, M.D.S., PhD (Periodontist & Implantologist; Professor, Periodontics, Yenepoya Dental College). Specialists in root canal treatment, dental implants, gum treatment, cosmetic and restorative dentistry. Visiting consultants in Oral & Maxillofacial Surgery and Orthodontics.",
   "url": "https://lumestudiosweb-stack.github.io/thedentaloffice/",
-  "telephone": "+91-78920-29550",
+  "telephone": ["+91-78920-29550", "+91-824-4631440"],
   "email": "prathapmsnair@gmail.com",
   "image": [
     "https://lumestudiosweb-stack.github.io/thedentaloffice/WhatsApp%20Image%202026-04-27%20at%2012.24.41%20AM%20%281%29.jpeg",
@@ -101,8 +101,9 @@
       "name": "Dr. M S Prathap",
       "honorificSuffix": "M.D.S.",
       "jobTitle": "Endodontist & Aesthetic Dentist",
-      "description": "Specialist in Root Canal, Restorative and Cosmetic Dentistry. 27 years of overall experience (25 as a specialist).",
+      "description": "Specialist in Root Canal, Restorative and Cosmetic Dentistry. 27 years of overall experience (25 as a specialist). Former HOD and currently Professor in the Department of Conservative Dentistry & Endodontics at Yenepoya Dental College, Mangaluru.",
       "alumniOf": [{"@type": "CollegeOrUniversity", "name": "KVG Medical College, Sullia"},{"@type": "CollegeOrUniversity", "name": "SDM College of Dental Sciences, Dharwad (RGUHS)"}],
+      "worksFor": {"@type": "CollegeOrUniversity", "name": "Yenepoya Dental College, Mangaluru"},
       "knowsAbout": ["Endodontics","Root Canal Treatment","Microscope-Assisted RCT","Aesthetic Dentistry","Cosmetic Dentistry","Restorative Dentistry","Ceramic Veneers","Zirconia Crowns","Smile Design","Pulpectomy"]
     },
     {
@@ -111,14 +112,17 @@
       "name": "Dr. Shruthy Prathap",
       "honorificSuffix": "M.D.S., PhD",
       "jobTitle": "Periodontist & Implantologist",
-      "description": "Co-Founder of The Dental Office. Specialist in Gum Diseases and Dental Implants.",
+      "description": "Co-Founder of The Dental Office. Specialist in Gum Diseases and Dental Implants. Currently Professor in the Department of Periodontics at Yenepoya Dental College, Mangaluru.",
       "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Annamalai University"},{"@type": "CollegeOrUniversity", "name": "Yenepoya Dental College, Mangaluru"},{"@type": "CollegeOrUniversity", "name": "Yenepoya University"}],
+      "worksFor": {"@type": "CollegeOrUniversity", "name": "Yenepoya Dental College, Mangaluru"},
       "knowsAbout": ["Periodontics","Periodontology","Gum Disease Treatment","Dental Implants","Implantology","Bone Grafting","Full-Arch Implants","Soft-Tissue Grafting"]
     }
   ],
   "employee": [
     {"@type": "Person","name": "Dr. M S Prathap","honorificSuffix": "M.D.S.","jobTitle": "Endodontist & Aesthetic Dentist"},
-    {"@type": "Person","name": "Dr. Shruthy Prathap","honorificSuffix": "M.D.S., PhD","jobTitle": "Periodontist & Implantologist"}
+    {"@type": "Person","name": "Dr. Shruthy Prathap","honorificSuffix": "M.D.S., PhD","jobTitle": "Periodontist & Implantologist"},
+    {"@type": "Person","name": "Dr. Jagadishchandra","honorificSuffix": "M.D.S.","jobTitle": "Consultant Oral & Maxillofacial Surgeon","description": "Professor & Head, Yenepoya Dental College, Mangaluru.","worksFor": {"@type": "CollegeOrUniversity", "name": "Yenepoya Dental College, Mangaluru"},"knowsAbout": ["Oral Surgery","Maxillofacial Surgery","Impacted Wisdom Teeth","Dentoalveolar Surgery"]},
+    {"@type": "Person","name": "Dr. Saidutt","honorificSuffix": "M.D.S.","jobTitle": "Consultant Orthodontist & Dentofacial Orthopaedist","description": "Professor, Department of Orthodontics & Dentofacial Orthopaedics, ABSMIDS, Mangaluru.","worksFor": {"@type": "CollegeOrUniversity", "name": "A. B. Shetty Memorial Institute of Dental Sciences (ABSMIDS), Mangaluru"},"knowsAbout": ["Orthodontics","Dentofacial Orthopaedics","Clear Aligners","Braces","Bite Correction"]}
   ],
   "medicalSpecialty": ["Dentistry"],
   "availableService": [
@@ -456,6 +460,26 @@ nav.scrolled{background:rgba(255,255,255,0.92);padding:14px 5%;backdrop-filter:b
 .doctor-cta:hover{background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 10px 26px rgba(249,115,22,0.38)}
 .doctor-cta i{font-size:13px}
 @media(max-width:900px){.doctors-grid{grid-template-columns:1fr;gap:20px}.doctor-card{padding:30px}}
+
+/* ─── CONSULTANT SPECIALISTS ─── */
+.consultants-block{max-width:1200px;margin:80px auto 0;padding-top:60px;border-top:1px solid var(--border)}
+.consultants-header{text-align:center;margin-bottom:40px;max-width:780px;margin-left:auto;margin-right:auto}
+.consultants-header .section-tag::before{display:none}
+.consultants-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(22px,2.6vw,32px);font-weight:700;color:var(--text-white);line-height:1.2;margin-bottom:12px}
+.consultants-sub{font-size:15px;color:var(--text-soft);font-weight:300;line-height:1.7}
+.consultants-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.consultant-card{background:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 14px 30px rgba(10,25,47,0.05);padding:32px;border-radius:14px}
+.consultant-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
+.consultant-avatar{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.consultant-role-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:rgba(249,115,22,0.10);color:var(--accent-dark);border:1px solid rgba(249,115,22,0.22);margin-bottom:8px}
+.consultant-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:var(--text-white);line-height:1.2;margin-bottom:4px}
+.consultant-card h4 .mds{color:var(--accent)}
+.consultant-meta{font-size:13px;font-weight:600;color:var(--text-soft);letter-spacing:0.02em}
+.consultant-quals{list-style:none;padding:0;margin:14px 0 16px;display:flex;flex-direction:column;gap:8px}
+.consultant-quals li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-soft);line-height:1.55}
+.consultant-quals li i{color:var(--accent);font-size:12px;flex-shrink:0;margin-top:4px}
+@media(max-width:900px){.consultants-grid{grid-template-columns:1fr;gap:16px}.consultant-card{padding:24px}}
+
 /* ─── GALLERY ─── */
 .gallery{padding:120px 5%;background:var(--primary-mid);position:relative;overflow:hidden}
 .gallery-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
@@ -637,7 +661,7 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
     <div class="hero-pill"><span class="dot"></span><span>Now Accepting New Patients — Emergency Same Day</span></div>
     <div class="hero-eyebrow">🦷 Dr. M S Prathap, M.D.S. &nbsp;·&nbsp; Dr. Shruthy Prathap, M.D.S. &nbsp;·&nbsp; Pumpwell, Mangaluru</div>
     <h1>Expert Dental Care,<br><em>Built Around You</em></h1>
-    <p>Family-friendly, established dental practice at Creek Galaxy, Pumpwell, Mangaluru. Cosmetic, restorative and implant dentistry — delivered with 27 years of experience and a gentle, judgement-free approach.</p>
+    <p>Family-friendly, established dental practice at Creek Galaxy, Pumpwell, Mangaluru. Root canal treatment, cosmetic, restorative and implant dentistry — delivered with 27 years of experience and a gentle, judgement-free approach.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-accent"><i class="fas fa-calendar-check"></i>Book an Appointment</a>
       <a href="#treatments" class="btn-ghost"><i class="fas fa-tooth"></i>View Treatments</a>
@@ -829,9 +853,10 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
         </div>
       </div>
       <p>Dr. M S Prathap is a specialist <strong>Endodontist and Aesthetic Dentist</strong> practising at The Dental Office, Pumpwell. He brings 27 years of overall experience — 25 of those as a specialist — to every patient he treats, with a particular focus on Root Canal Treatment, Restorative and Cosmetic Dentistry.</p>
-      <p>He completed his BDS from KVG Medical College, Sullia in 1999, followed by an M.D.S. in Endodontics from SDM College of Dental Sciences, Dharwad (RGUHS). His medical registration is verified.</p>
+      <p>He completed his BDS from KVG Medical College, Sullia in 1999, followed by an M.D.S. in Endodontics from SDM College of Dental Sciences, Dharwad (RGUHS). He is the former HOD and currently serves as <strong>Professor in the Department of Conservative Dentistry &amp; Endodontics at Yenepoya Dental College, Mangaluru</strong>. His medical registration is verified.</p>
       <div class="quals">
         <div class="qual"><i class="fas fa-check-circle"></i><span><strong>Specialist in:</strong> Root Canal, Restorative &amp; Cosmetic Dentistry</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span><strong>Professor</strong> — Conservative Dentistry &amp; Endodontics, Yenepoya Dental College, Mangaluru <em>(former HOD)</em></span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>BDS — KVG Medical College, Sullia (1999)</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>M.D.S. Endodontics — SDM College of Dental Sciences, Dharwad (RGUHS)</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>27 yrs overall experience · 25 yrs as specialist</span></div>
@@ -858,9 +883,10 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
         </div>
       </div>
       <p>Dr. Shruthy Prathap is a specialist <strong>Periodontist and Implantologist</strong> and the Co-Founder of The Dental Office. She brings dedicated expertise in gum health, surgical implant placement and full-mouth rehabilitation to the practice.</p>
-      <p>Her work centres on the foundations of every healthy smile — treating gum disease before it threatens teeth, and replacing missing teeth with carefully planned dental implants.</p>
+      <p>She currently serves as <strong>Professor in the Department of Periodontics at Yenepoya Dental College, Mangaluru</strong>. Her work centres on the foundations of every healthy smile — treating gum disease before it threatens teeth, and replacing missing teeth with carefully planned dental implants.</p>
       <div class="quals">
         <div class="qual"><i class="fas fa-check-circle"></i><span><strong>Specialist in:</strong> Gum Diseases &amp; Dental Implants</span></div>
+        <div class="qual"><i class="fas fa-check-circle"></i><span><strong>Professor</strong> — Department of Periodontics, Yenepoya Dental College, Mangaluru</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>BDS — Annamalai University (2004)</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>M.D.S. Periodontics &amp; Implantology — Yenepoya Dental College, Mangaluru (RGUHS, 2009)</span></div>
         <div class="qual"><i class="fas fa-check-circle"></i><span>PhD — Yenepoya University (2026)</span></div>
@@ -879,6 +905,57 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       </div>
       <a href="#contact" class="doctor-cta"><i class="fas fa-calendar-check"></i>Book with Dr. Shruthy</a>
     </article>
+  </div>
+
+  <!-- ─── CONSULTANT SPECIALISTS ─── -->
+  <div class="consultants-block reveal">
+    <div class="consultants-header">
+      <div class="section-tag" style="justify-content:center">Our Consultant Specialists</div>
+      <h3 class="consultants-h">Visiting Specialists Who Round Out Our Care</h3>
+      <p class="consultants-sub">In addition to our in-house doctors, The Dental Office partners with respected academic specialists for advanced surgical and orthodontic care.</p>
+    </div>
+    <div class="consultants-grid">
+      <article class="consultant-card" itemscope itemtype="https://schema.org/Person">
+        <div class="consultant-head">
+          <div class="consultant-avatar"><i class="fas fa-user-md"></i></div>
+          <div>
+            <span class="consultant-role-badge">Consultant Specialist</span>
+            <h4 itemprop="name">Dr. Jagadishchandra, <span class="mds">M.D.S.</span></h4>
+            <p class="consultant-meta" itemprop="jobTitle">Oral &amp; Maxillofacial Surgeon</p>
+          </div>
+        </div>
+        <ul class="consultant-quals">
+          <li><i class="fas fa-check-circle"></i><span><strong>Specialist in:</strong> Oral &amp; Maxillofacial Surgery</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>Professor &amp; Head</strong> — Yenepoya Dental College, Mangaluru</span></li>
+          <li><i class="fas fa-check-circle"></i><span>M.D.S. — Oral &amp; Maxillofacial Surgery</span></li>
+        </ul>
+        <div class="doctor-tags">
+          <span class="doctor-tag">Oral Surgery</span>
+          <span class="doctor-tag">Maxillofacial Surgery</span>
+          <span class="doctor-tag">Impacted Wisdom Teeth</span>
+        </div>
+      </article>
+      <article class="consultant-card" itemscope itemtype="https://schema.org/Person">
+        <div class="consultant-head">
+          <div class="consultant-avatar"><i class="fas fa-user-md"></i></div>
+          <div>
+            <span class="consultant-role-badge co">Consultant Specialist</span>
+            <h4 itemprop="name">Dr. Saidutt, <span class="mds">M.D.S.</span></h4>
+            <p class="consultant-meta" itemprop="jobTitle">Orthodontist &amp; Dentofacial Orthopaedist</p>
+          </div>
+        </div>
+        <ul class="consultant-quals">
+          <li><i class="fas fa-check-circle"></i><span><strong>Specialist in:</strong> Orthodontics &amp; Dentofacial Orthopaedics</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>Professor</strong> — Dept. of Orthodontics &amp; Dentofacial Orthopaedics, ABSMIDS, Mangaluru</span></li>
+          <li><i class="fas fa-check-circle"></i><span>M.D.S. — Orthodontics &amp; Dentofacial Orthopaedics</span></li>
+        </ul>
+        <div class="doctor-tags">
+          <span class="doctor-tag">Braces</span>
+          <span class="doctor-tag">Clear Aligners</span>
+          <span class="doctor-tag">Bite Correction</span>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1031,8 +1108,9 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       <p class="section-sub">Step into a space built around your dental health. Reach out via phone or WhatsApp — we respond within minutes.</p>
       <div style="margin-top:30px">
         <div class="c-detail"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Location</strong><span>2nd Floor, Creek Galaxy, opp. Indiana Hospital Road, Pumpwell, Mangaluru, Karnataka 575002</span></div></div>
-        <div class="c-detail"><div class="c-icon"><i class="fas fa-phone"></i></div><div><strong>Phone / WhatsApp</strong><span><a href="tel:917892029550" style="color:var(--text-soft)">+91 78920 29550</a></span></div></div>
-        <div class="c-detail"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span>prathapmsnair@gmail.com</span></div></div>
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-mobile-screen-button"></i></div><div><strong>Mobile / WhatsApp</strong><span><a href="tel:917892029550" style="color:var(--text-soft)">+91 78920 29550</a></span></div></div>
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-phone"></i></div><div><strong>Landline</strong><span><a href="tel:08244631440" style="color:var(--text-soft)">0824 - 463 1440</a></span></div></div>
+        <div class="c-detail"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span><a href="mailto:prathapmsnair@gmail.com" style="color:var(--text-soft)">prathapmsnair@gmail.com</a></span></div></div>
       </div>
       <div class="hours-grid">
         <div class="hours-head"><i class="fas fa-clock" style="margin-right:8px"></i>Opening Hours</div>
@@ -1070,7 +1148,28 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
           <option>Other</option>
         </select>
       </div>
-      <div class="fg"><label>Message (optional)</label><textarea id="message" placeholder="Any additional details or preferred appointment time..."></textarea></div>
+      <div class="form-row">
+        <div class="fg">
+          <label>Preferred Date</label>
+          <input type="date" id="prefDate">
+        </div>
+        <div class="fg">
+          <label>Preferred Time Slot</label>
+          <select id="prefSlot">
+            <option value="">Any available slot</option>
+            <option>3:00 PM – 3:30 PM</option>
+            <option>3:30 PM – 4:00 PM</option>
+            <option>4:00 PM – 4:30 PM</option>
+            <option>4:30 PM – 5:00 PM</option>
+            <option>5:00 PM – 5:30 PM</option>
+            <option>5:30 PM – 6:00 PM</option>
+            <option>6:00 PM – 6:30 PM</option>
+            <option>6:30 PM – 7:00 PM</option>
+            <option>7:00 PM – 7:30 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Message (optional)</label><textarea id="message" placeholder="Any additional details, concerns or notes for the clinic..."></textarea></div>
       <button class="btn-wa" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i>Send via WhatsApp</button>
     </div>
   </div>
@@ -1128,7 +1227,8 @@ footer{background:var(--primary-mid);border-top:1px solid var(--border)}
       <h5>Visit Us</h5>
       <div class="f-links">
         <a href="https://www.google.com/maps/search/?api=1&query=The+Dental+Office+Pumpwell+Mangaluru" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt" style="margin-right:8px;color:var(--accent)"></i>Creek Galaxy, Pumpwell</a>
-        <a href="tel:917892029550"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>+91 78920 29550</a>
+        <a href="tel:917892029550"><i class="fas fa-mobile-screen-button" style="margin-right:8px;color:var(--accent)"></i>+91 78920 29550</a>
+        <a href="tel:08244631440"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>0824 - 463 1440</a>
         <a href="mailto:prathapmsnair@gmail.com"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent)"></i>prathapmsnair@gmail.com</a>
         <a href="#gallery"><i class="fas fa-images" style="margin-right:8px;color:var(--accent)"></i>Tour Our Clinic</a>
       </div>
@@ -1316,9 +1416,19 @@ function sendWhatsApp() {
   const fname = document.getElementById('fname').value.trim();
   const lname = document.getElementById('lname').value.trim();
   const treatment = document.getElementById('treatment').value;
+  const prefDate = document.getElementById('prefDate').value;
+  const prefSlot = document.getElementById('prefSlot').value;
   const message = document.getElementById('message').value.trim();
   if (!fname) { alert('Please enter your name.'); return; }
-  const text = encodeURIComponent(`Hello The Dental Office!\n\n*New Appointment Request*\n\n*Name:* ${fname} ${lname}\n*Treatment:* ${treatment || 'Not specified'}\n*Message:* ${message || 'N/A'}`);
+  const fmtDate = prefDate ? new Date(prefDate).toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) : '';
+  const text = encodeURIComponent(
+    `Hello The Dental Office!\n\n*New Appointment Request*\n\n` +
+    `*Name:* ${fname} ${lname}\n` +
+    `*Treatment:* ${treatment || 'Not specified'}\n` +
+    `*Preferred Date:* ${fmtDate || 'Not specified'}\n` +
+    `*Preferred Time Slot:* ${prefSlot || 'Any available slot'}\n` +
+    `*Message:* ${message || 'N/A'}`
+  );
   window.open(`https://wa.me/917892029550?text=${text}`, '_blank');
 }
 </script>
